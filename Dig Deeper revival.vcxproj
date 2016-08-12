@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Framework\Patterns\Observer.hpp" />
+    <ClInclude Include="src\Framework\Patterns\singleton.hpp" />
+    <ClInclude Include="src\Framework\Patterns\Subject.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3630C7F1-8499-4618-8673-6C175E7198B4}</ProjectGuid>
@@ -76,26 +82,26 @@
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
-    <IntDir>$(Configuration)\temps</IntDir>
+    <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
-    <IntDir>$(Configuration)\temps</IntDir>
+    <IntDir>$(Configuration)\temps\</IntDir>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
-    <IntDir>$(Configuration)\temps</IntDir>
+    <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
-    <IntDir>$(Configuration)\temps</IntDir>
+    <IntDir>$(Configuration)\temps\</IntDir>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

@@ -13,10 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\Framework">
+      <UniqueIdentifier>{6080ba1c-97fd-46d9-9de9-e2048a218a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Framework\Gui">
+      <UniqueIdentifier>{ad91fea0-0fde-4e4f-829d-f8e57901e6b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Framework\Patterns">
+      <UniqueIdentifier>{93336eac-ddaf-4c83-a670-aff229a47b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Framework">
+      <UniqueIdentifier>{d2afad66-98f0-4486-923e-d42467cf5ebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Framework\Gui">
+      <UniqueIdentifier>{8a021dd3-cc8e-416a-89f9-f67f86b3b5e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Framework\Patterns">
+      <UniqueIdentifier>{a1490cd5-d49d-468f-a726-47a8bb4d0519}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Patterns\Subject.cpp">
+      <Filter>Quelldateien\Framework\Patterns</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Framework\Patterns\singleton.hpp">
+      <Filter>Headerdateien\Framework\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Patterns\Observer.hpp">
+      <Filter>Headerdateien\Framework\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Patterns\Subject.hpp">
+      <Filter>Headerdateien\Framework\Patterns</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
