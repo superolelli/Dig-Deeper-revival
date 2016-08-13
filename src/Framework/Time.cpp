@@ -1,12 +1,11 @@
 #include "Time.hpp"
-#include <iostream>
 
 
 
 CTime::CTime()
 {
-	m_elapsed = seconds(0);
-	m_current = seconds(0);
+	m_elapsed = sf::seconds(0);
+	m_current = sf::seconds(0);
 	m_clock.restart();
 }
 

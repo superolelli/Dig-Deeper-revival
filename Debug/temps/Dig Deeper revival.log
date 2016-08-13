@@ -1,3 +1,7 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  main.cpp
-c1xx : fatal error C1083: Datei (Quelle) kann nicht geöffnet werden: "main.cpp": No such file or directory
+﻿  main.cpp
+  Time.cpp
+  Subject.cpp
+  Gameengine.cpp
+  Code wird generiert...
+  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
+  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)

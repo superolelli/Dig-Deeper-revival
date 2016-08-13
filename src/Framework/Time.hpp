@@ -1,11 +1,10 @@
-#ifndef TIME_HPP
-#define TIME_HPP
+#pragma once
 
 
-#include "singleton.hpp"
+#include "../Framework/Patterns/singleton.hpp"
 #include "SFML\System.hpp"
 
-using namespace sf;
+
 
 #define g_pTimer CTime::Get()
 
@@ -20,22 +19,18 @@ public:
 	void Update();
 
 	//gives the time since the start of the game
-	Time GetCurrentTime(){ return m_current; }
+	sf::Time GetCurrentTime(){ return m_current; }
 
 	//gives the time since the last frame
-	Time GetElapsedTime(){return m_elapsed;}
+	sf::Time GetElapsedTime(){return m_elapsed;}
 
 
 private:
 
-	Clock m_clock;
-	Time m_current;
-	Time m_elapsed;
+	sf::Clock m_clock;
+	sf::Time m_current;
+	sf::Time m_elapsed;
 };
 
 
 
-
-
-
-#endif

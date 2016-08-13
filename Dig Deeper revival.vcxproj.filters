@@ -39,6 +39,12 @@
     <ClCompile Include="src\Framework\Patterns\Subject.cpp">
       <Filter>Quelldateien\Framework\Patterns</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Time.cpp">
+      <Filter>Quelldateien\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Gameengine.cpp">
+      <Filter>Quelldateien\Framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -49,6 +55,15 @@
     </ClInclude>
     <ClInclude Include="src\Framework\Patterns\Subject.hpp">
       <Filter>Headerdateien\Framework\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Time.hpp">
+      <Filter>Headerdateien\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gamestate.hpp">
+      <Filter>Headerdateien\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gameengine.hpp">
+      <Filter>Headerdateien\Framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
