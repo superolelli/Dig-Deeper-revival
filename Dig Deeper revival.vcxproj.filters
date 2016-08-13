@@ -45,6 +45,9 @@
     <ClCompile Include="src\Framework\Gameengine.cpp">
       <Filter>Quelldateien\Framework</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Window.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -64,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="src\Framework\Gameengine.hpp">
       <Filter>Headerdateien\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Window.hpp">
+      <Filter>Headerdateien\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Makros.hpp">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
