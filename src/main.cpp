@@ -1,39 +1,15 @@
-
-
-
-#include"Framework\Window.hpp"
-#include <iostream>
+#include"Game\Examplestate.hpp"
 
 
 int main()
 {
-	CWindow window;
-	window.Init();
+	CGameEngine engine;
 
-	while (window.GetKeystates(KeyID::Escape) != Keystates::Released)
-	{
-		window.Clear(sf::Color::Black);
-		
-		window.ProcessEvents();
+	engine.Init("Test");
+	engine.PushState(new CGame());
+	engine.Run();
 
-		if (window.GetKeystates(KeyID::B) == Keystates::Released)
-			std::cout << "B released!" << std::endl;
-		
-		if (window.GetKeystates(KeyID::B) == Keystates::Pressed)
-			std::cout << "B pressed!" << std::endl;
+	engine.Quit();
 
-		if (window.GetKeystates(KeyID::B) == Keystates::Held)
-			std::cout << "B held!" << std::endl;
-
-		if (window.GetButtonstates(ButtonID::Left) == Keystates::Pressed)
-			std::cout << "Left mouse pressed!" << std::endl;
-
-		if (window.GetMouseWheelMovement() > 0)
-			std::cout << "Mouse wheel moved: " << window.GetMouseWheelMovement() << std::endl;
-
-		window.Flip();
-	}
-
-	window.Quit();
 	return 0;
 }

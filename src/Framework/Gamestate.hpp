@@ -6,7 +6,7 @@
 class CGameState
 {
 public:
-	virtual void Init(CGameEngine *_gameEngine) = 0;
+	virtual void Init(CGameEngine*_engine) = 0;
 	virtual void Cleanup() = 0;
 
 	virtual void Pause() = 0;
@@ -18,7 +18,5 @@ public:
 
 protected: 
 	CGameState() { }
-
-private:  
 	CGameEngine *m_pGameEngine;   //a pointer to the game engine
 };

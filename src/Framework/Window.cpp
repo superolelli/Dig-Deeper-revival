@@ -1,15 +1,13 @@
 #include "Window.hpp"
 
 
-
-
-void CWindow::Init()
+void CWindow::Init(std::string _title)
 {
 	using namespace sf;
 
 	//make a new window
 	m_pWindow = new RenderWindow;
-	m_pWindow->create(VideoMode::getDesktopMode(), "Dig Deeper", Style::None | Style::Fullscreen);
+	m_pWindow->create(VideoMode::getDesktopMode(), _title, Style::None | Style::Fullscreen);
 
 	ClearKeyStates();
 
@@ -47,7 +45,10 @@ void CWindow::ProcessEvents()
 	sf::Event event;
 
 	//clears all the keystates
-	ClearKeyStates();
+	ResetKeyStates();
+
+	//gets the current mouse position
+	m_mousePosition = sf::Mouse::getPosition();
 
 	//sets all keystates
 	while (m_pWindow->pollEvent(event))
@@ -86,7 +87,7 @@ void CWindow::ProcessEvents()
 
 
 
-void CWindow::ClearKeyStates()
+void CWindow::ResetKeyStates()
 {
 	for (Keystates &k : m_keyStates)
 	{
@@ -107,3 +108,18 @@ void CWindow::ClearKeyStates()
 	m_mouseWheelMovement = 0;
 }
 
+
+
+
+
+void CWindow::ClearKeyStates()
+{
+	for (Keystates &k : m_keyStates)
+		k = Keystates::None;
+
+	for (Keystates &k : m_mouseStates)
+		k = Keystates::None;
+
+	m_mouseWheelMovement = 0;
+	m_mousePosition = sf::Vector2i(0, 0);
+}

@@ -16,7 +16,7 @@ class CWindow
 public:
 
 	//Inits the window 
-	void Init();
+	void Init(std::string _title);
 
 	//Quits everything safe
 	void Quit();
@@ -27,16 +27,17 @@ public:
 	//flips the double-buffer and shows the new frame
 	void Flip();
 
-	//returns a list of all events, happened
+	//Processes Input
 	void ProcessEvents();
 
 	//returns a pointer to the window
 	inline sf::RenderWindow *GetWindow() { return m_pWindow; }
 
 	//The getters
-	Keystates  const &GetKeystates(KeyID _id) const { return m_keyStates[_id]; }
+	Keystates const &GetKeystates(KeyID _id) const { return m_keyStates[_id]; }
 	Keystates const &GetButtonstates(ButtonID _id) const { return m_mouseStates[_id]; }
-	inline int GetMouseWheelMovement() const { return m_mouseWheelMovement; }
+	inline int const GetMouseWheelMovement() const { return m_mouseWheelMovement; }
+	inline sf::Vector2i const &GetMousePos()  { return m_mousePosition; }
 
 
 private:
@@ -44,9 +45,14 @@ private:
 	Keystates m_keyStates[sf::Keyboard::KeyCount];
 	Keystates m_mouseStates[sf::Mouse::ButtonCount];
 	int m_mouseWheelMovement;
+	sf::Vector2i m_mousePosition;
 
 	//the window to render on
 	sf::RenderWindow *m_pWindow;
 
+	//takes the old keystates into account
+	void ResetKeyStates();
+
+	//completeley resets the keystates
 	void ClearKeyStates();
 };

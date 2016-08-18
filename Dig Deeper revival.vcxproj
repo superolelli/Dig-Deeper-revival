@@ -20,20 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Framework\Gameengine.cpp" />
+    <ClCompile Include="src\Framework\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
+    <ClCompile Include="src\Game\Examplestate.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Gameengine.hpp" />
     <ClInclude Include="src\Framework\Gamestate.hpp" />
+    <ClInclude Include="src\Framework\Graphics\Sprite.hpp" />
     <ClInclude Include="src\Framework\Makros.hpp" />
     <ClInclude Include="src\Framework\Patterns\Observer.hpp" />
     <ClInclude Include="src\Framework\Patterns\singleton.hpp" />
     <ClInclude Include="src\Framework\Patterns\Subject.hpp" />
     <ClInclude Include="src\Framework\Time.hpp" />
     <ClInclude Include="src\Framework\Window.hpp" />
+    <ClInclude Include="src\Game\Examplestate.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3630C7F1-8499-4618-8673-6C175E7198B4}</ProjectGuid>

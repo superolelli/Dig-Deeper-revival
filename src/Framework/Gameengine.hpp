@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Time.hpp"
+#include "Window.hpp"
 
 class CGameState;
 
@@ -13,7 +14,7 @@ class CGameState;
 class CGameEngine
 {
 public:
-	void Init();
+	void Init(std::string _name);
 	void Run();
 	void Quit();
 
@@ -26,8 +27,22 @@ public:
 	//pops the last state of the stack
 	void PopState();
 
+	//returns the window
+	CWindow *GetWindow() { return &m_Window; }
+
+	//stops the engine
+	void StopEngine() { m_running = false; }
+
 
 private:
 	// the stack of states
 	std::vector<CGameState*> m_pStates;
+
+	//the window
+	CWindow m_Window;
+
+	bool m_running;
+
+	//clears all states
+	void ClearStates();
 };
