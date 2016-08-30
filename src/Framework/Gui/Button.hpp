@@ -1,43 +1,34 @@
-#ifndef BUTTON_HPP
-#define BUTTON_HPP
+#pragma once
 
 
-#include "Framework.hpp"
+#include "../Gameengine.hpp"
+#include "../Graphics/Sprite.hpp"
+
+enum Buttontypes{Up, Down, Motion_Up, Motion_Down};
 
 class CButton
 {
 public:
 
-	//the constants for the buttontypes
-	static const int BUTTONTYPE_UP =          1;
-	const static int BUTTONTYPE_DOWN =        2;
-	const static int BUTTONTYPE_MOTION_UP =   3;
-	const static int BUTTONTYPE_MOTION_DOWN = 4;
-
 	CButton();
     ~CButton();
 
-	//Loads the button, defines the type etc.
-	void Load(Texture *_texture, int _x, int _y, int _type);
+	//Loads the button, defines the type and sets the position
+	void Load(sf::Texture &_texture, int _x, int _y, Buttontypes _type);
 
 	//Sets the button's position
 	void SetPos(int _x, int _y);
 
 	//renders the button, returns true if button was pressed
-	bool Render(int eventtype);
+	bool Render(CGameEngine &_engine);
 
-	//gets the rect
-	IntRect GetRect(){return m_pButtonSprite->GetRect();}
+	//Returns the rect
+	sf::IntRect GetRect(){return m_ButtonSprite.GetRect();}
 
 private:
 
-	CSprite *m_pButtonSprite;               //the buttonsprite
-	RenderWindow *m_pRenderWindow;                //the renderwindow
-	int m_Buttontype;                       //the buttontype
+	CSprite m_ButtonSprite;                       //the buttonsprite
+	Buttontypes m_Buttontype;                       //the buttontype
 
 };
 
-
-
-
-#endif

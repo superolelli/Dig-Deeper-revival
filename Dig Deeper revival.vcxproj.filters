@@ -60,6 +60,9 @@
     <ClCompile Include="src\Framework\Graphics\Sprite.cpp">
       <Filter>Quelldateien\Framework\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Gui\Button.cpp">
+      <Filter>Quelldateien\Framework\Gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="src\Framework\Graphics\Sprite.hpp">
       <Filter>Headerdateien\Framework\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gui\Button.hpp">
+      <Filter>Headerdateien\Framework\Gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

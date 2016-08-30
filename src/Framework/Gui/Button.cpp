@@ -4,47 +4,24 @@
 
 CButton::CButton()
 {
-	m_pButtonSprite = NULL;
-	m_pRenderWindow = NULL;
+
 }
 
 
 CButton::~CButton()
 {
-	SAFE_DELETE(m_pButtonSprite);
 }
 
 
 
 //Loads the texture, sets the position and type of the button
-void CButton::Load(Texture *_texture, int _x, int _y, int _type)
+void CButton::Load(sf::Texture &_texture, int _x, int _y, Buttontypes _type)
 {
-	m_pRenderWindow = g_pFramework->GetWindow();
-
-	m_pButtonSprite = new CSprite;
-
-	//Load the texture
-	switch(_type)
-	{
-	case BUTTONTYPE_UP: 
-		m_pButtonSprite->Load(_texture, 2, _texture->getSize().x/2, _texture->getSize().y);
-		break;
-
-    case BUTTONTYPE_DOWN:
-		m_pButtonSprite->Load(_texture, 2, _texture->getSize().x/2, _texture->getSize().y);
-		break;
-
-	case BUTTONTYPE_MOTION_UP: 
-		m_pButtonSprite->Load(_texture, 3, _texture->getSize().x/3, _texture->getSize().y);
-		break;
-
-    case BUTTONTYPE_MOTION_DOWN:
-		m_pButtonSprite->Load(_texture, 3, _texture->getSize().x/3, _texture->getSize().y);
-		break;
-	}
+	//(int)(type/2) is 2 for up/down and 3 for motion_up/motion_down buttons
+	m_ButtonSprite.Load(_texture, 2 + (int)(_type / 2), _texture.getSize().x / (2 + (int)(_type / 2)), _texture.getSize().y);
 
 	//set the button's position and type
-	m_pButtonSprite->SetPos(_x, _y);
+	m_ButtonSprite.SetPos(_x, _y);
 	m_Buttontype = _type;
 }
 
@@ -53,94 +30,86 @@ void CButton::Load(Texture *_texture, int _x, int _y, int _type)
 //sets the button's position
 void CButton::SetPos(int _x, int _y)
 {
-	m_pButtonSprite->SetPos(_x, _y);
+	m_ButtonSprite.SetPos(_x, _y);
 }
 
 
 
 
-bool CButton::Render(int eventtype)
+bool CButton::Render(CGameEngine &_engine)
 {
 	 //if the mouse is at the button
-	if(m_pButtonSprite->GetRect().contains(Mouse::getPosition(*m_pRenderWindow)))
+	if(m_ButtonSprite.GetRect().contains(_engine.GetMousePos()))
 	{
 		//If the left mouse button was released
-		if(eventtype == MOUSE_LEFT_UP)
+		if(_engine.GetButtonstates(ButtonID::Left) == Released)
 		{
 			//render the right button frame
 			switch(m_Buttontype)
 			{
-			case BUTTONTYPE_UP:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 1.0f);
-				g_pSound->m_sound.setBuffer(g_pSound->m_buttonClick);
-				g_pSound->m_sound.play();
+			case Buttontypes::Up:
+				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
 				return true;
 				break;
 
-			case BUTTONTYPE_DOWN:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 0.0f);
+			case Buttontypes::Down:
+				m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
 				return false;
 				break;
 
-			case BUTTONTYPE_MOTION_UP:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 2.0f);
-				g_pSound->m_sound.setBuffer(g_pSound->m_buttonClick);
-				g_pSound->m_sound.play();
+			case Buttontypes::Motion_Up:
+				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
 				return true;
 				break;
 
-			case BUTTONTYPE_MOTION_DOWN:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 0.0f);
+			case Buttontypes::Motion_Down:
+				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
 				return false;
 				break;
 			}
 		}
-		//if the left mouse button was pressed
-		else if(Mouse::isButtonPressed(Mouse::Left))
+		//if the left mouse button was pressed or is held
+		else if(_engine.GetButtonstates(ButtonID::Left) == Pressed || _engine.GetButtonstates(ButtonID::Left) == Held)
 		{
 			//Render the right button frame
 			switch(m_Buttontype)
 			{
-			case BUTTONTYPE_UP:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 1.0f);
+			case Buttontypes::Up:
+				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
 				return false;
 				break;
 
-			case BUTTONTYPE_DOWN:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 1.0f);
-				g_pSound->m_sound.setBuffer(g_pSound->m_buttonClick);
-				g_pSound->m_sound.play();
+			case Buttontypes::Down:
+				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
 				return true;
 				break;
 
-			case BUTTONTYPE_MOTION_UP:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 2.0f);
+			case Buttontypes::Motion_Up:
+				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
 				return false;
 				break;
 
-			case BUTTONTYPE_MOTION_DOWN:
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 2.0f);
-				g_pSound->m_sound.setBuffer(g_pSound->m_buttonClick);
-				g_pSound->m_sound.play();
+			case Buttontypes::Motion_Down:
+				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
 				return true;
 				break;
 			}
 		}
 		else 
 		{
-			if(m_Buttontype == BUTTONTYPE_UP || m_Buttontype == BUTTONTYPE_DOWN)
+			if(m_Buttontype == Buttontypes::Up || m_Buttontype == Buttontypes::Down)
 			{
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 0.0f);
+				m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
 			}
 			else
-				m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 1.0f);
+				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
 
 			return false;
 		}
 	}
 
 
-	m_pButtonSprite->Render(g_pFramework->GetRenderWindow(), 0.0f);
+	m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
 	return false;
 }
 

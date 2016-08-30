@@ -1,8 +1,31 @@
-﻿  Examplestate.cpp
-  Window.cpp
-  Gameengine.cpp
+﻿  Button.cpp
+f:\dig deeper revival\src\framework\gui\button.cpp(40): error C2511: "bool CButton::Render(CGameEngine &)": Überladene Memberfunktion nicht in "CButton" gefunden
+  f:\dig deeper revival\src\framework\gui\button.hpp(10): note: Siehe Deklaration von "CButton"
+f:\dig deeper revival\src\framework\gui\button.cpp(42): error C2228: Links von ".GetRect" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(42): error C2228: Links von ".contains" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(48): error C2597: Ungültiger Verweis auf nicht-statischen Member "CButton::m_Buttontype"
+f:\dig deeper revival\src\framework\gui\button.cpp(49): error C2450: switch-Ausdruck des Typs "unknown" nicht zulässig
+  f:\dig deeper revival\src\framework\gui\button.cpp(49): note: Ganzzahliger Ausdruck erwartet
+f:\dig deeper revival\src\framework\gui\button.cpp(51): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(56): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(61): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(66): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(75): error C2597: Ungültiger Verweis auf nicht-statischen Member "CButton::m_Buttontype"
+f:\dig deeper revival\src\framework\gui\button.cpp(76): error C2450: switch-Ausdruck des Typs "unknown" nicht zulässig
+  f:\dig deeper revival\src\framework\gui\button.cpp(76): note: Ganzzahliger Ausdruck erwartet
+f:\dig deeper revival\src\framework\gui\button.cpp(78): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(83): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(88): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(93): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(100): error C2677: Binärer Operator "==": Es konnte kein globaler Operator gefunden werden, der den Typ "Buttontypes" akzeptiert (oder keine geeignete Konvertierung möglich)
+f:\dig deeper revival\src\framework\gui\button.cpp(100): error C2597: Ungültiger Verweis auf nicht-statischen Member "CButton::m_Buttontype"
+f:\dig deeper revival\src\framework\gui\button.cpp(100): error C3867: "CButton::m_Buttontype": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+f:\dig deeper revival\src\framework\gui\button.cpp(102): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(105): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+f:\dig deeper revival\src\framework\gui\button.cpp(112): error C2228: Links von ".Render" müssen sich in einer Klasse/Struktur/Union befinden
+  Code wird generiert...
+  Kompilieren...
+  Examplestate.cpp
   Code wird generiert...
   Überspringen... (keine relevanten Änderungen gefunden)
   main.cpp
-  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
-  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)

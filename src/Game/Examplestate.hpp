@@ -2,7 +2,8 @@
 
 
 #include "../Framework/Gamestate.hpp"
-
+#include "../Framework/Graphics/Sprite.hpp"
+#include "../Framework/Gui/Button.hpp"
 
 
 
@@ -20,4 +21,9 @@ public:
 	 void HandleEvents() override;
 	 void Update() override;
 	 void Render(double _normalizedTimestep) override;
+
+
+private:
+	sf::Texture m_texture;
+	CButton m_button;
 };

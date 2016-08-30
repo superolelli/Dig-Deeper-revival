@@ -31,7 +31,7 @@ public:
 	void ProcessEvents();
 
 	//returns a pointer to the window
-	inline sf::RenderWindow *GetWindow() { return m_pWindow; }
+	inline sf::RenderWindow *GetRenderWindow() { return m_pWindow; }
 
 	//The getters
 	Keystates const &GetKeystates(KeyID _id) const { return m_keyStates[_id]; }

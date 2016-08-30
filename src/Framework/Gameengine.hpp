@@ -27,11 +27,29 @@ public:
 	//pops the last state of the stack
 	void PopState();
 
-	//returns the window
-	CWindow *GetWindow() { return &m_Window; }
-
 	//stops the engine
 	void StopEngine() { m_running = false; }
+
+
+
+
+	//Returns the render window
+	sf::RenderWindow *GetWindow() { return m_Window.GetRenderWindow(); }
+
+	//clears the window
+	void ClearWindow(sf::Color _color) { m_Window.Clear(_color); }
+
+	//Flips the window
+	void FlipWindow() { m_Window.Flip(); }
+
+	//processes the events
+	void ProcessEvents() { m_Window.ProcessEvents(); }
+
+	//getters for the key- and buttonstates
+	Keystates const &GetKeystates(KeyID _id) const { return m_Window.GetKeystates(_id); }
+	Keystates const &GetButtonstates(ButtonID _id) const { return m_Window.GetButtonstates(_id); }
+	inline int const GetMouseWheelMovement() const { return m_Window.GetMouseWheelMovement(); }
+	inline sf::Vector2i const &GetMousePos() { return m_Window.GetMousePos(); }
 
 
 private:

@@ -11,7 +11,7 @@ void CWindow::Init(std::string _title)
 
 	ClearKeyStates();
 
-//	m_pWindow->setVerticalSyncEnabled(true);
+	m_pWindow->setVerticalSyncEnabled(true);
 	m_pWindow->setKeyRepeatEnabled(false);
 }
 

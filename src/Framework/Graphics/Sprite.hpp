@@ -6,6 +6,7 @@
 
 class CSprite
 {
+public:
 	CSprite();
 	~CSprite();
 
