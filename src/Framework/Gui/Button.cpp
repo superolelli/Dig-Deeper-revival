@@ -15,7 +15,7 @@ CButton::~CButton()
 
 
 //Loads the texture, sets the position and type of the button
-void CButton::Load(sf::Texture &_texture, int _x, int _y, Buttontypes _type)
+void CButton::Load(sf::Texture const &_texture, int _x, int _y, Buttontypes _type)
 {
 	//(int)(type/2) is 2 for up/down and 3 for motion_up/motion_down buttons
 	m_ButtonSprite.Load(_texture, 2 + (int)(_type / 2), _texture.getSize().x / (2 + (int)(_type / 2)), _texture.getSize().y);
@@ -69,7 +69,7 @@ bool CButton::Render(CGameEngine &_engine)
 			}
 		}
 		//if the left mouse button was pressed or is held
-		else if(_engine.GetButtonstates(ButtonID::Left) == Pressed || _engine.GetButtonstates(ButtonID::Left) == Held)
+		else if(_engine.GetButtonstates(ButtonID::Left) == Pressed)
 		{
 			//Render the right button frame
 			switch(m_Buttontype)

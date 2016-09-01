@@ -1,7 +1,7 @@
 #include "Window.hpp"
 
 
-void CWindow::Init(std::string _title)
+void CWindow::Init(std::string const &_title)
 {
 	using namespace sf;
 

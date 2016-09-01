@@ -11,13 +11,13 @@ public:
 	~CSprite();
 
 	//Textures the sprite
-	void Load(sf::Texture &_texture);
+	void Load(sf::Texture const &_texture);
 
 	//Textures a animated sprite
-	void Load(sf::Texture &_texture, int _numFrames, int _frameWidth, int _frameHeight);
+	void Load(sf::Texture const &_texture, int _numFrames, int _frameWidth, int _frameHeight);
 
 	//sets the part of the texture to render
-	void SetTextureRect(sf::IntRect &_rect);
+	void SetTextureRect(sf::IntRect const &_rect);
 
 	//sets the texture rect to default
 	void SetTextureRectToDefault();
@@ -50,16 +50,16 @@ public:
 	void SetColor(int _r, int _g, int _b, int _a = 255);
 
 	//Renders a normal sprite
-	void Render(sf::RenderTarget *_target, sf::IntRect *clip = NULL);
+	void Render(sf::RenderTarget *_target, sf::IntRect *clip = nullptr);
 
-	//Renders an animated sprite
-	void Render(sf::RenderTarget *_target, float _fFrameNumber);
+	//Renders an animated sprite (if picturewise is true, the frameNumber is casted to an int)
+	void Render(sf::RenderTarget *_target, float _fFrameNumber, bool _picturewise = true);
 
 	//returns the sprite's rectangle
 	sf::IntRect const &GetRect() const { return m_Rect; }
 
 	//returns the global rect
-	sf::IntRect const &GetGlobalRect() const;
+	sf::IntRect GetGlobalRect() const;
 
 private:
 

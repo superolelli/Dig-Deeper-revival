@@ -37,7 +37,7 @@ public:
 	sf::RenderWindow *GetWindow() { return m_Window.GetRenderWindow(); }
 
 	//clears the window
-	void ClearWindow(sf::Color _color) { m_Window.Clear(_color); }
+	void ClearWindow(sf::Color const &_color) { m_Window.Clear(_color); }
 
 	//Flips the window
 	void FlipWindow() { m_Window.Flip(); }

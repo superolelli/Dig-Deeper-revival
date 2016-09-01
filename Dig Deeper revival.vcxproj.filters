@@ -63,6 +63,9 @@
     <ClCompile Include="src\Framework\Gui\Button.cpp">
       <Filter>Quelldateien\Framework\Gui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Gui\Beam.cpp">
+      <Filter>Quelldateien\Framework\Gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -96,6 +99,9 @@
       <Filter>Headerdateien\Framework\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\Gui\Button.hpp">
+      <Filter>Headerdateien\Framework\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gui\Beam.hpp">
       <Filter>Headerdateien\Framework\Gui</Filter>
     </ClInclude>
   </ItemGroup>

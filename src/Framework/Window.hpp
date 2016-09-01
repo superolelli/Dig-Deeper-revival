@@ -16,7 +16,7 @@ class CWindow
 public:
 
 	//Inits the window 
-	void Init(std::string _title);
+	void Init(std::string const &_title);
 
 	//Quits everything safe
 	void Quit();

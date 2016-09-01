@@ -14,7 +14,7 @@ public:
     ~CButton();
 
 	//Loads the button, defines the type and sets the position
-	void Load(sf::Texture &_texture, int _x, int _y, Buttontypes _type);
+	void Load(sf::Texture const &_texture, int _x, int _y, Buttontypes _type);
 
 	//Sets the button's position
 	void SetPos(int _x, int _y);
@@ -23,7 +23,7 @@ public:
 	bool Render(CGameEngine &_engine);
 
 	//Returns the rect
-	sf::IntRect GetRect(){return m_ButtonSprite.GetRect();}
+	sf::IntRect const &GetRect() const {return m_ButtonSprite.GetRect();}
 
 private:
 

@@ -19,7 +19,7 @@ CSprite::~CSprite()
 
 
 
-void CSprite::Load(sf::Texture &_texture)
+void CSprite::Load(sf::Texture const &_texture)
 {
 	//Set the texture
 	m_Sprite.setTexture(_texture);
@@ -39,7 +39,7 @@ void CSprite::Load(sf::Texture &_texture)
 
 
 
-void CSprite::Load(sf::Texture &_texture, int _numFrames, int _frameWidth, int _frameHeight)
+void CSprite::Load(sf::Texture const &_texture, int _numFrames, int _frameWidth, int _frameHeight)
 {
 	//Set the texture
 	Load(_texture);
@@ -91,7 +91,7 @@ void CSprite::Move(float _x, float _y)
 
 
 //sets the texture rect
-void CSprite::SetTextureRect(sf::IntRect &_rect)
+void CSprite::SetTextureRect(sf::IntRect const &_rect)
 {
 	m_Sprite.setTextureRect(_rect);
 }
@@ -147,18 +147,26 @@ void CSprite::Render(sf::RenderTarget *_target, sf::IntRect *clip)
 
 
 //render animated sprites
-void CSprite::Render(sf::RenderTarget *_target, float _fFrameNumber)
+void CSprite::Render(sf::RenderTarget *_target, float _fFrameNumber, bool _picturewise)
 {
-	//calculate column
-	int Column = static_cast<int>(_fFrameNumber) % m_NumFramesX;
+	if (_picturewise)
+	{
+		//calculate column
+		auto Column = static_cast<int>(_fFrameNumber) % m_NumFramesX;
 
-	//calculate row
-	int Row = static_cast<int>(_fFrameNumber) / m_NumFramesX;
+		//calculate row
+		auto Row = static_cast<int>(_fFrameNumber) / m_NumFramesX;
 
-	//calculate rect
-	m_FrameRect.left = Column* m_FrameWidth;
-	m_FrameRect.top = Row * m_FrameHeight;
-
+		//calculate rect
+		m_FrameRect.left = Column* m_FrameWidth;
+		m_FrameRect.top = Row * m_FrameHeight;
+	}
+	else
+	{
+		//for sprites, that are not rendered picturewise
+		m_FrameRect.left = m_FrameWidth - (int)(_fFrameNumber * m_FrameWidth);
+		m_FrameRect.top = 0;
+	}
 
 	//render Sprite
 	Render(_target, &m_FrameRect);
@@ -174,7 +182,7 @@ void CSprite::SetColor(int _r, int _g, int _b, int _a)
 
 
 
-sf::IntRect const &CSprite::GetGlobalRect() const
+sf::IntRect CSprite::GetGlobalRect() const
 {
 	return (sf::IntRect)m_Sprite.getGlobalBounds();
 }

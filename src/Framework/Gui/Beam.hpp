@@ -1,10 +1,8 @@
-#ifndef BEAM_HPP
-#define BEAM_HPP
+#pragma once
 
-#include "Sprite.hpp"
-#include "sstream"
 
-using namespace sf;
+#include "../Graphics/Sprite.hpp"
+#include <sstream>
 
 class CBeam
 {
@@ -13,7 +11,7 @@ public:
 	~CBeam();
 
 	//Textures the sprite
-	void Load(Texture *_beamTexture, Texture *_frameTexture, int *_value, int *_maxValue);
+	void Load(sf::Texture const &_beamTexture, sf::Texture const &_frameTexture, int *_value, int *_maxValue);
 
 	//Sets the Position for float values
 	void SetPos(float _x, float _y);
@@ -22,32 +20,24 @@ public:
 	void SetPos(int _x, int _y);
 
 	//sets the font
-	void SetText(Font _font, Color _color, int _size);
+	void SetText(sf::Font const &_font, sf::Color const &_color, int _size);
 
 	//sets the character size
 	void SetCharacterSize(int _size){m_text.setCharacterSize(_size);}
 
 	//Renders the beam
-	void Render(RenderTarget *_target);
-
-	//renders the beam with numbers
-	void RenderWithNumbers(RenderTarget *_target);
+	void Render(sf::RenderTarget *_target, bool _withNumbers = false);
 
 
 private:
 
-	Sprite m_Beam;                //the beam sprite
-	CSprite *m_pFrame;                //the frame sprite
+	CSprite m_beam;                   //the beam sprite
+	CSprite m_frame;                //the frame sprite
 
-	int * m_value;                    //the current value
-	int *m_maxValue;                //the maximum of the value
+	int * m_pValue;                    //the current value
+	int *m_pMaxValue;                //the maximum of the value
 
-	int m_frameWidth;              //the width of one frame
-
-	Font m_font;
-	Text m_text;                    //the text
+	sf::Text m_text;                    //the text
 
 
 };
-
-#endif

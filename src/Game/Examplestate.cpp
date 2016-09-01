@@ -9,8 +9,16 @@ void CGame::Init(CGameEngine *_engine)
 {
 	m_pGameEngine = _engine;
 
-	m_texture.loadFromFile("Data/play_button.png");
-	m_button.Load(m_texture, 300, 300, Buttontypes::Motion_Down);
+	m_ButtonTexture.loadFromFile("Data/play_button.png");
+	m_button.Load(m_ButtonTexture, 300, 300, Buttontypes::Motion_Down);
+
+	m_BeamFrameTexture.loadFromFile("Data/life_frame.png");
+	m_BeamTexture.loadFromFile("Data/life_beam.png");
+
+	m_value = 10;
+	m_maxValue = 10;
+	m_beam.Load(m_BeamTexture, m_BeamFrameTexture, &m_value, &m_maxValue);
+	m_beam.SetPos(20, 20);
 }
 
 void CGame::Cleanup()
@@ -42,7 +50,10 @@ void CGame::Render(double _normalizedTimestep)
 {
 	m_pGameEngine->ClearWindow(sf::Color::Black);
 
-	m_button.Render(*m_pGameEngine);
+	if (m_button.Render(*m_pGameEngine))
+		m_value--;
+
+	m_beam.Render(m_pGameEngine->GetWindow());
 
 	m_pGameEngine->FlipWindow();
 }

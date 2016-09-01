@@ -19,10 +19,10 @@ public:
 	void Update();
 
 	//gives the time since the start of the game
-	sf::Time GetCurrentTime(){ return m_current; }
+	sf::Time const &GetCurrentTime(){ return m_current; }
 
 	//gives the time since the last frame
-	sf::Time GetElapsedTime(){return m_elapsed;}
+	sf::Time const &GetElapsedTime(){return m_elapsed;}
 
 
 private:

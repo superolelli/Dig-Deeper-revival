@@ -62,7 +62,7 @@ void CGameEngine::ChangeState(CGameState * _state)
 void CGameEngine::ClearStates()
 {
 	//delete every state on the stack
-	for (CGameState *state : m_pStates)
+	for (auto state : m_pStates)
 	{
 		state->Cleanup();
 		SAFE_DELETE(state);
