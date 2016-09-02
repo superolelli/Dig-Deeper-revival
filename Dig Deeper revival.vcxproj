@@ -26,7 +26,7 @@
     <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
-    <ClCompile Include="src\Game\Examplestate.cpp" />
+    <ClCompile Include="src\Game\MainMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="src\Framework\Patterns\Subject.hpp" />
     <ClInclude Include="src\Framework\Time.hpp" />
     <ClInclude Include="src\Framework\Window.hpp" />
-    <ClInclude Include="src\Game\Examplestate.hpp" />
+    <ClInclude Include="src\Game\MainMenu.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3630C7F1-8499-4618-8673-6C175E7198B4}</ProjectGuid>

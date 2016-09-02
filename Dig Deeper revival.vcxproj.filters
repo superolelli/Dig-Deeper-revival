@@ -37,6 +37,12 @@
     <Filter Include="Quelldateien\Framework\Graphics">
       <UniqueIdentifier>{6657018b-0e44-44d6-a805-8765d1e5afe7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Game">
+      <UniqueIdentifier>{ab4627b2-4ba1-4eac-8406-e4c0664177af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game">
+      <UniqueIdentifier>{6c020f79-264c-4cc7-966d-2385c5a86bb1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -54,9 +60,6 @@
     <ClCompile Include="src\Framework\Window.cpp">
       <Filter>Quelldateien\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Examplestate.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="src\Framework\Graphics\Sprite.cpp">
       <Filter>Quelldateien\Framework\Graphics</Filter>
     </ClCompile>
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="src\Framework\Gui\Beam.cpp">
       <Filter>Quelldateien\Framework\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\MainMenu.cpp">
+      <Filter>Quelldateien\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +98,6 @@
     <ClInclude Include="src\Framework\Makros.hpp">
       <Filter>Headerdateien\Framework</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game\Examplestate.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\Framework\Graphics\Sprite.hpp">
       <Filter>Headerdateien\Framework\Graphics</Filter>
     </ClInclude>
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="src\Framework\Gui\Beam.hpp">
       <Filter>Headerdateien\Framework\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\MainMenu.hpp">
+      <Filter>Headerdateien\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
