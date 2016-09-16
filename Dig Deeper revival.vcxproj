@@ -96,8 +96,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
     <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,8 +109,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
     <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

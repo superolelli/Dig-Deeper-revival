@@ -8,6 +8,10 @@
 void CMainMenu::Init(CGameEngine *_engine)
 {
 	m_pGameEngine = _engine;
+
+	m_texture.loadFromFile("Data/Sprites/Panels/cookingbook_menu.png");
+	m_sprite.Load(m_texture);
+	m_sprite.SetPos(300, 200);
 }
 
 
@@ -39,6 +43,8 @@ void CMainMenu::Update()
 void CMainMenu::Render(double _normalizedTimestep)
 {
 	m_pGameEngine->ClearWindow(sf::Color::Black);
+
+	m_sprite.Render(m_pGameEngine->GetWindow());
 
 	m_pGameEngine->FlipWindow();
 }

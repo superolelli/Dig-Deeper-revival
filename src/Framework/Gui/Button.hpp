@@ -4,7 +4,7 @@
 #include "../Gameengine.hpp"
 #include "../Graphics/Sprite.hpp"
 
-enum Buttontypes{Up, Down, Motion_Up, Motion_Down};
+enum class Buttontypes{Up, Down, Motion_Up, Motion_Down};
 
 class CButton
 {

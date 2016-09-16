@@ -34,7 +34,7 @@ public:
 
 
 	//Returns the render window
-	sf::RenderWindow *GetWindow() { return m_Window.GetRenderWindow(); }
+	sf::RenderWindow &GetWindow() { return *m_Window.GetRenderWindow(); }
 
 	//clears the window
 	void ClearWindow(sf::Color const &_color) { m_Window.Clear(_color); }

@@ -18,7 +18,7 @@ CButton::~CButton()
 void CButton::Load(sf::Texture const &_texture, int _x, int _y, Buttontypes _type)
 {
 	//(int)(type/2) is 2 for up/down and 3 for motion_up/motion_down buttons
-	m_ButtonSprite.Load(_texture, 2 + (int)(_type / 2), _texture.getSize().x / (2 + (int)(_type / 2)), _texture.getSize().y);
+	m_ButtonSprite.Load(_texture, 2 + (int)(static_cast<int>(_type) / 2), _texture.getSize().x / (2 + (int)(static_cast<int>(_type) / 2)), _texture.getSize().y);
 
 	//set the button's position and type
 	m_ButtonSprite.SetPos(_x, _y);

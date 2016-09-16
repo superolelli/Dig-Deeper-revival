@@ -25,5 +25,7 @@ public:
 
 
 private:
+	sf::Texture m_texture;
+	CSprite m_sprite;
 
 };
