@@ -43,6 +43,15 @@
     <Filter Include="Quelldateien\Game">
       <UniqueIdentifier>{6c020f79-264c-4cc7-966d-2385c5a86bb1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Game\Ressources">
+      <UniqueIdentifier>{a152bebb-7916-4b69-95d7-0742b4e9a615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Framework\Services">
+      <UniqueIdentifier>{f1d7ea45-ec94-4f40-b19d-3ad8756db9ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game\Ressources">
+      <UniqueIdentifier>{ec41cd3f-0271-4ed4-9d79-7a1ed3f20a63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -71,6 +80,15 @@
     </ClCompile>
     <ClCompile Include="src\Game\MainMenu.cpp">
       <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Ressources\TextureManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Ressources\SoundManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Ressources\FontManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +127,15 @@
     </ClInclude>
     <ClInclude Include="src\Game\MainMenu.hpp">
       <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\FontManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\SoundManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\TextureManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

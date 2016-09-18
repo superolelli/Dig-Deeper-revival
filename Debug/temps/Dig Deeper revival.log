@@ -1,3 +1,8 @@
-﻿  Button.cpp
+﻿  main.cpp
+  TextureManager.cpp
+  SoundManager.cpp
+  FontManager.cpp
+  MainMenu.cpp
+  Generating Code...
   Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.pdb (Full PDB)

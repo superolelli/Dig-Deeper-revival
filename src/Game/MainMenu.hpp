@@ -6,6 +6,9 @@
 #include "../Framework/Gui/Button.hpp"
 #include "../Framework/Gui/Beam.hpp"
 
+#include "Ressources\TextureManager.hpp"
+#include "Ressources\FontManager.hpp"
+#include "Ressources\SoundManager.hpp"
 
 
 class CMainMenu : public CGameState
@@ -25,7 +28,7 @@ public:
 
 
 private:
-	sf::Texture m_texture;
-	CSprite m_sprite;
+
+	CButton m_button;
 
 };

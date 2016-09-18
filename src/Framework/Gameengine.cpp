@@ -1,7 +1,7 @@
 #include "Gameengine.hpp"
 #include "Gamestate.hpp"
 
-void CGameEngine::Init(std::string _name)
+void CGameEngine::Init(std::string const &_name)
 {
 	m_Window.Init(_name);
 

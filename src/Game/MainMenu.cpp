@@ -9,9 +9,9 @@ void CMainMenu::Init(CGameEngine *_engine)
 {
 	m_pGameEngine = _engine;
 
-	m_texture.loadFromFile("Data/Sprites/Panels/cookingbook_menu.png");
-	m_sprite.Load(m_texture);
-	m_sprite.SetPos(300, 200);
+
+	m_button.Load(g_pTextures->t_button, 300, 300, Buttontypes::Motion_Up, "Knopf");
+	m_button.SetButtontext(g_pFonts->f_opine, 25, sf::Color::Black, sf::Text::Style::Bold);
 }
 
 
@@ -44,7 +44,7 @@ void CMainMenu::Render(double _normalizedTimestep)
 {
 	m_pGameEngine->ClearWindow(sf::Color::Black);
 
-	m_sprite.Render(m_pGameEngine->GetWindow());
+	m_button.Render(*m_pGameEngine);
 
 	m_pGameEngine->FlipWindow();
 }

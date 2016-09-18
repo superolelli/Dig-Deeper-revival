@@ -2,6 +2,7 @@
 
 
 #include <vector>
+#include <memory>
 #include "Time.hpp"
 #include "Window.hpp"
 
@@ -14,7 +15,7 @@ class CGameState;
 class CGameEngine
 {
 public:
-	void Init(std::string _name);
+	void Init(std::string const &_name);
 	void Run();
 	void Quit();
 

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-
 <stringtable>
 
   <!--Character Info-->
@@ -15,19 +14,393 @@
   <string value="Geschwindigkeit" ID="8"/>
   <string value="Mana" ID="9"/>
   <string value="Manaregeneration" ID="10"/>
+  <string value="Licht" ID ="11"/>
 
   <!--Level Up-->
-  <string value="Level Up!" ID="11"/>
+  <string value="Stufe aufgestiegen!" ID="12"/>
+  <string value="Robuste Haut" ID="13"/>
+  <string value="Eine zähe Haut, die den Zwerg widerstandsfähiger macht.&#xA;+3 Rüstung" ID="14"/>
+  <string value="Lange Fingernägel" ID ="15"/>
+  <string value="Lange Fingernägel bewirken, dass, der Zwerg schneller graben kann.&#xA;+0,5 Abbaugeschwindigkeit" ID="16"/>
+  <string value="Kritische Chance" ID =" 17"/>
+  <string value="Erhöht deine Chance einen kritischen Treffer zu landen.&#xA;+5 Kritische Chance" ID ="18"/>
+  <string value="Kritischer Schaden" ID="19"/>
+  <string value="Erhöht deinen Schaden bei einem kritischen Treffer.&#xA;+10% Kritischer Schaden" ID="20"/>
+  <string value="Jungbrunnen" ID="21"/>
+  <string value="Ein Schluck aus dem Jungbrunnen lässt dich länger leben.&#xA;+10 Maximales Leben" ID="22"/>
+  <string value="Regeneration" ID="23"/>
+  <string value="Regenerier dein verlorene Leben schneller.&#xA;+1 Lebensregeneration" ID="24"/>
+  <string value="Schornsteinfegerzwerg" ID="25"/>
+  <string value="Indem du deine Schornsteinfegerausbildung fortsetzt, erhöht sich selbstverständlich dein Glück.&#xA;+10 Glück" ID="26"/>
+  <string value="Magiepunkte" ID="27"/>
+  <string value="Du erhälst einen Magiepunkt, mit dem du Zauber erlernen oder verbessern kannst.&#xA;+1 Magiepunkt" ID="28"/>
+  <string value="Mana" ID="29"/>
+  <string value="Keine Ahnung, woher man Mana bekommt. Hier hast du welches.&#xA;+10 Mana" ID="30"/>
+  <string value="Magische Macht" ID="31"/>
+  <string value="Regenerier dein verlorenes Mana schneller.&#xA;+2 Manaregeneration" ID="32"/>
+  <string value="Fortschritt" ID="33"/>
+  <string value="Durch Forschung erhälst du ein zufälliges Rezept.&#xA;Heureka!" ID="34"/>
+  <string value="Flinker Flitzer" ID="35"/>
+  <string value="Dieses Training lässt deine Zwerg flinker flitzen als je zuvor.&#xA;+10 Geschwindigkeit" ID="36"/>
+  <string value="Hartes Training" ID="37"/>
+  <string value="Hartes Training verhilft deinem Zwerg zu mehr Stärke.&#xA;+1 Stärke" ID="38"/>
+
+  <!--Tooltips Konsumierbares-->
+  <string value="(konsumierbar)" ID="43"/>
+  <string value="Dauer" ID="44"/>
+
+  <!--Equipment Namen-->
+  <string value=" des Schutzes" ID="45"/>
+  <string value=" des Erdreiches" ID="46"/>
+  <string value=" der Zerstörung" ID="47"/>
+  <string value=" der Vitalität" ID="48"/>
+  <string value=" des Flitzers" ID="49"/>
+  <string value=" des Schornsteinfegers" ID="50"/>
+  <string value=" des Magiers" ID="51"/>
+  <string value=" der Regeneration" ID="52"/>
+  <string value=" der arkanen Macht" ID="53"/>
+  <string value=" des Zufalls" ID="54"/>
+  <string value=" des Vernichtens" ID="55"/>
+  <string value=" der Erleuchtung" ID="56"/>
+
+  <!--Highscore-->
+  <string value="Gib deinen Namen ein:" ID ="60"/>
+  <string value="Niemand" ID="61"/>
+  <string value="Minuten" ID="62"/>
+  <string value="Kein Highscore vorhanden!" ID="63"/>
+  <string value="Erreichtes Level:" ID ="64"/>
+  <string value="Startklasse:" ID ="65"/>
+
+  <!--Startklassen-->
+  <string value="Minenarbeiter" ID="66"/>
+  <string value="+ 10 Glück&#xA;+ 0,5 Abbaugeschwindigkeit&#xA;+ Eine Spitzhacke&#xA;+ Einige Erze" ID="67"/>
+
+  <string value="Bauarbeiter" ID="68"/>
+  <string value="+ 20 Leben&#xA;+ 1 Lebensregeneration&#xA;+ 3 Rezepte&#xA;+ Etwas Baumaterial" ID="69"/>
+
+  <string value="Krieger" ID="70"/>
+  <string value="+ 2 Stärke&#xA;+ Ein Schwert&#xA;+ Ein Eisenhelm" ID="71"/>
+
+  <string value="Magier" ID="72"/>
+  <string value="+ 40 Mana&#xA;+ 1 Manaregeneration&#xA;+ 3 Magiepunkte&#xA;+ Ein Zauberhut!&#xA;- 25 Leben" ID="73"/>
+
+  <string value="Cheater" ID="74"/>
+
+  <!--Neue Welt-->
+  <string value="Neue Welt" ID="77"/>
+
+  <!--Tooltips Magie-->
+  <string value="Dieser Zauber wurde noch nicht erlernt!" ID="80"/>
+  <string value="Zauber ist auf der höchsten Stufe!" ID="81"/>
+  <string value="Auf der nächsten Stufe:" ID="82"/>
+  <string value="Schaden" ID="83"/>
+  <string value="Manakosten" ID="84"/>
+
+  <string value="Feuerball" ID="85"/>
+  <string value="Der gute alte Feuerball." ID="86"/>
+  <string value="Eispfeil" ID="87"/>
+  <string value="Der Eispfeil friert Gegner ein!" ID="88"/>
+  <string value="Einfrierdauer:" ID="89"/>
+  <string value="Giftwolke" ID="90"/>
+  <string value="Eine Giftwolke, die Gegner im Umkreis vergiftet!" ID="91"/>
+  <string value="Vergiftungsstufe" ID="92"/>
+  <string value="Vergiftungsdauer" ID="93"/>
+
+  <!--Neue Angriffszauber hier einfügen...-->
+
+  <string value="Heilung" ID="103"/>
+  <string value="Ein Heilzauber, der dir sofort Leben auffüllt." ID="104"/>
+  <string value="Lebenspunkte:" ID="105"/>
+  <string value="Manaschild" ID="106"/>
+  <string value="Das Manaschild wandelt einen Prozentsatz&#xA; deines maximalen Manas in Rüstung um." ID="107"/>
+
+  <!--Neue Verteidigungszauber hier einfügen...-->
+
+  <string value="Alchemie" ID="121"/>
+  <string value="Der Alchemiezauber wandelt einen Block&#xA;in einen Block ähnlicher Wertigkeit um." ID="122"/>
+  <string value="Chance auf Block höherer Wertigkeit:" ID="123"/>
+  <string value="Chance auf Block niedrigerer Wertigkeit:" ID="124"/>
+  <string value="Lichtsphäre" ID="125"/>
+  <string value="Eine Lichtkugel, die dir folgt. Juhu!" ID="126"/>
+  <string value="Lichtradius:" ID =" 127"/>
+  <string value="Teleport" ID="128"/>
+  <string value="Teleportiert dich in Blickrichtung." ID="129"/>
+  <string value="Weite:" ID="130"/>
+
+  <!--Neue allgemeine Zauber hier einfügen...-->
+
+  <!--Inventarpanel-->
+  <string value="Inventar" ID="145"/>
+  <string value="Bauen" ID="146"/>
+  <string value="Attribute" ID="147"/>
+  <string value="Magie" ID="148"/>
 
   <!--Buttons-->
+  <string value="Spielen" ID="150"/>
+  <string value="Optionen" ID="151"/>
+  <string value="Highscore" ID="152"/>
+  <string value="Beenden" ID="153"/>
 
-  <!--Tooltips-->
+  <string value="Spiel laden" ID="154"/>
+  <string value="Neues Spiel" ID="155"/>
+  <string value="Mehrspieler" ID="156"/>
+
+  <string value="Einstellungen" ID="157"/>
+  <string value="Erfolge" ID="158"/>
+  <string value="Upgrades" ID="159"/>
+
+  <string value="Zurück" ID="160"/>
+
+  <string value="Highscore löschen" ID="161"/>
+  <string value="Spiel löschen" ID="162"/>
+  <string value="Füllstand der Balken&#xA;wird nicht angezeigt" ID="163"/>
+  <string value="Füllstand der Balken&#xA;        wird angezeigt" ID="164"/>
+  <string value="Inventarnummerierung&#xA;  wird nicht angezeigt" ID="165"/>
+  <string value="Inventarnummerierung&#xA;        wird angezeigt" ID ="166"/>
+  <string value="       Schönes&#xA;Lichtrendering" ID="167"/>
+  <string value="     Schnelles&#xA;Lichtrendering" ID="168"/>
+
+  <string value="Spiel starten" ID="169"/>
+  <string value="Kleine Welt" ID="170"/>
+  <string value="Mittlere Welt" ID="171"/>
+  <string value="Große Welt" ID="172"/>
+
+  <string value="Fortsetzen" ID="173"/>
+  <string value="Speichern" ID="174"/>
+
+  <!--Helppage-->
+
+  <string value="Steuerung" ID="175"/>
+  <string value="Grundlagen" ID="176"/>
+  <string value="Interface" ID="177"/>
+  <string value="Charakterwerte" ID="178"/>
+  <string value="Inventar" ID="179"/>
+  <string value="Bauen" ID="180"/>
+  <string value="Magie" ID="181"/>
+
+
+  <string value="A oder Pfeiltaste" ID ="185"/>
+  <string value="Nach Rechts laufen" ID="186"/>
+  <string value="D oder Pfeiltaste" ID="187"/>
+  <string value="Nach Links laufen" ID="188"/>
+  <string value="W, Pfeil-/Leertaste" ID="189"/>
+  <string value ="Springen" ID ="190"/>
+  <string value="S" ID="191"/>
+  <string value="Sprung unterbrechen" ID="192"/>
+  <string value="E" ID="193"/>
+  <string value="Inventar öffnen/schließen" ID="194"/>
+  <string value="B" ID="195"/>
+  <string value="Baumenü öffnen/schließen" ID="196"/>
+  <string value="C" ID="197"/>
+  <string value="Charaktermenü öffnen/schließen" ID="198"/>
+  <string value="M" ID="199"/>
+  <string value="Magiemenü öffnen/schließen" ID="200"/>
+  <string value="Linke Maustaste" ID="201"/>
+  <string value="Schlagen (in der Welt), Item auswählen (im Inventar)" ID="202"/>
+  <string value="Rechte Maustaste" ID="203"/>
+  <string value="Gewähltes Item benutzen, besonderes Objekt benutzen" ID="204"/>
+  <string value="Mausrad" ID="205"/>
+  <string value="Nächstes/Vorheriges Item auswählen (Inventarleiste)" ID="206"/>
+  <string value="1-0" ID="207"/>
+  <string value="Bestimmtes Item auswählen(Inventarleiste)" ID="208"/>
+  <string value="F6" ID="209"/>
+  <string value="Schnellspeichern" ID="210"/>
+  <string value="F1" ID="211"/>
+  <string value="Hilfeseite öffnen / schließen" ID="212"/>
+  <string value="K" ID="213"/>
+  <string value="Minimap anzeigen/ausblenden" ID="214"/>
+
+  <string value="Ziel: Befreie die Prinzessin. Sie wurde von Goblins gefangen und befindet sich in einem Kerker tief unter der Erde." ID="215"/>
+  <string value="Schritte zum Ziel:" ID="216"/>
+  <string value="1. Finde den Schlüsselwächter, der sich in einem Raum in der oberen Hälfte der Welt aufhält" ID="217"/>
+  <string value="2. Besiege den Schlüsselwächter und sammle den Schlüssel ein" ID="218"/>
+  <string value="3. Finde die Prinzessin im unteren Kerker" ID="219"/>
+  <string value="4. Befreie die Prinzessin mithilfe des Schlüssels aus dem Käfig" ID="220"/>
+  <string value="(Rechtsklick mit dem Schlüssel auf den Käfig)" ID="221"/>
+  <string value="Wenn dein Leben auf 0 sinkt, stirbst du und das Spiel ist beendet." ID="222"/>
+  <string value="Wenn du die Prinzessin befreist kannst du dich in den Highscore eintragen, je nachdem wie schnell du warst." ID="223"/>
+
+  <string value="1. LINKS OBEN werden der aktuelle Lebens-, Mana- und Erfahrungsstand angezeigt." ID="230"/>
+  <string value="Außerdem werden hier auch die aktuellen Auswirkungen auf die Werte des Zwergs angezeigt" ID="231"/>
+  <string value="2. OBEN in der MITTE wird die bereits vergangene Zeit angezeigt" ID="232"/>
+  <string value="3. RECHTS OBEN wird bei einem Stufenaufstieg ein entsprechender Button angezeigt" ID="233"/>
+  <string value="4. UNTEN in der MITTE befindet sich die Inventarleiste mit den Gegenständen, auf die man direkt zugreifen kann" ID="234"/>
+  <string value="5. UNTEN RECHTS befindet sich die Minimap, die man über 'K' an- und ausschalten kann" ID="235"/>
+
+  <string value="Das Maximalleben. Sinkt das aktuelle Leben auf 0, stirbt man" ID="240"/>
+  <string value="Wie viel Leben man pro Sekunde regeneriert" ID="241"/>
+  <string value="Wieviel Prozent des Schadens abgewehrt wird" ID="242"/>
+  <string value="Wieviel Schaden du verursachst" ID="243"/>
+  <string value="Die Wahrscheinlichkeit eine kritischen Treffer zu landen" ID="244"/>
+  <string value="Der prozentuale Mehrschaden (x10) bei einem kritischen Treffer" ID="245"/>
+  <string value="Die Wahrscheinlichkeit, dass ein Block mehr als ein Erz o.ä. droppt" ID="246"/>
+  <string value="Die Geschwindigkeit, mit der Blöcke abgebaut werden" ID="247"/>
+  <string value="Die Laufgeschwindigkeit" ID="248"/>
+  <string value="Das Maximalmana. Einen Zauber auszuführen kostet Mana" ID="249"/>
+  <string value="Wieviel Mana pro Sekunde regeneriert wird" ID="250"/>
+
+  <string value="Das Inventar ist zweigeteilt: Das Hauptinventar und die Inventarleiste." ID ="254" />
+  <string value="Auf die Dinge in der Inventarleiste kann man auch zugreifen, wenn das Inventar geschlossen ist." ID="255"/>
+  <string value="Dies geschieht über das Mausrad oder die Nummerntasten. Das aktive Item ist mit einem Rahmen markiert." ID="256"/>
+  <string value="Das Hauptinventar öffnet man über die 'E'-Taste. Hier sind alle Dinge, die nicht in der Leiste sind." ID="257"/>
+  <string value="Ist das Hauptinventar offen kann man Items aufteilen, wegwerfen oder verschieben" ID="258"/>
+  <string value="(auch in der Inventarleiste)" ID="259"/>
+  <string value="Folgende Aktionen kann man durchführen:" ID="260"/>
+  <string value="LINKE MAUSTASTE:" ID="261"/>
+  <string value="Kein Item aktiv: Wählt das angeklickte Item aus (wird aktiv)" ID="262"/>
+  <string value="Item aktiv; Klick auf leeres Feld: Legt das Item in dem Feld ab" ID="263"/>
+  <string value="Item aktiv; Klick auf belegtes Feld: Das aktive Item wird abgelegt, das andere wird aktiv" ID="264"/>
+  <string value="(wenn beide Items gleich: Items werden zusammengefasst und ins Feld gelegt)" ID=" 265"/>
+  <string value="RECHTE MAUSTASTE:" ID="266"/>
+  <string value="Item aktiv: Legt eine Einheit des Items auf das Feld" ID="267"/>
+
+  <string value="Im Baumenü können neue Dinge gebaut werden. Man ruft es über die 'B'-Taste auf." ID="270"/>
+  <string value="LINKS in der Liste kann man ein Item auswählen, das man bauen möchte." ID="271"/>
+  <string value="RECHTS im Fenster werden dann Informationen zum Item angezeigt." ID="272"/>
+  <string value="UNTEN auf dem 'Bauen'-Knopf kann das Item dann gebaut werden." ID="273"/>
+  <string value="(die benötigten Materialien werden automatisch aus dem Inventar gelöscht)" ID="274"/>
+  <string value="Das neue Item wird auf einen freien Platz im Inventar gelegt." ID="275"/>
+  <string value="Bei Equipment besteht die Chance, dass seltene Items gebaut werden." ID="276"/>
+
+  <string value="Im Magiemenü können Zauber gelernt und verbessert werden." ID ="280"/>
+  <string value="Es wird über die 'M'-Taste geöffnet." ID ="281"/>
+  <string value="Durch LINKSKLICK auf einen Zauber wird dieser gelernt bzw. verbessert." ID="282"/>
+  <string value="Dafür werden Magiepunkte benötigt, die man beim Level-Up erhalten kann." ID="283"/>
+  <string value="Durch RECHTSKLICK auf einen Zauber wird dieser ins Inventar befördert." ID="284"/>
+  <string value="Ein aktiver Zauber im Inventar wird per Rechtsklick ausgeführt und kostet Mana." ID="285"/>
+  <string value="Außerdem kann man einen Zauber per Nummerntaste direkt ausführen." ID="286"/>
+
+
 
   <!--Building-->
+  <string value="Nicht genug Materialien!" ID="300"/>
+  <string value="Bauen" ID="301"/>
+  <string value="Dieser mächtige Ring aus Arcanusgestein sieht nicht nur gut aus, sondern bringt dir auch noch zufällige Verbesserungen.&#xA;&#xA;2x Arcanus" ID="305"/>
+  <string value="Eine gute zwergische Kampfaxt! Damit spaltet sich ein Goblinschädel wie von selbst.&#xA;&#xA;1x Stab&#xA;5x Eisen" ID="306"/>
+  <string value="Mit diesem sehr harten Kampfstein kloppst du jedem die Birne ein. Die Reichweite ist... nun ja, begrenzt.&#xA;&#xA;1x Diadochit&#xA;1x Kohle" ID="307"/>
+  <string value="Die Bienenkiste liefert in regelmäßigen Abständen Honig. Lecker!&#xA;1x Bienenkorb&#xA;&#xA;4x Holz" ID="308"/>
+  <string value="Steinziegel sehen schöner aus, als einfacher Stein. Gut geeignet zum Bauen einer Burg.&#xA;&#xA;2x Stein" ID="309"/>
+  <string value="Eine Steinziegelwand dient als Rückwand. Hervorragend macht sich diese in einer mächtigen Zwergenburg.&#xA;&#xA;2x Steinziegel" ID="310"/>
+  <string value="Eine Kerze spendet ein wenig Licht. Man kann sie sich sogar auf die Glatze kleben.&#xA;&#xA;2x Wachs" ID="311"/>
+  <string value="In einem Kessel kannst du dir leckere Sachen kochen. Oder es zumindest versuchen...&#xA;&#xA;5x Eisen" ID="312"/>
+  <string value="In dieser Truhe kannst du all den Plunder lagern, den kein Zwerg braucht.&#xA;&#xA;3x Holz&#xA;2x Eisen&#xA;1x Gold" ID="313"/>
+  <string value="Dieser Schrank fällt schon fast auseinander, wenn man ihn nur ansieht. Man kann ihn mehr oder weniger dekorativ irgendwo hinstellen&#xA;&#xA;5x Holz" ID="314"/>
+  <string value="Eine Diadochitrüstung hält zwar nicht so viel aus wie eine Eisenrüstung, lässt den Träger aber seine Gesundheit regenerieren.&#xA;&#xA;8x Diadochit&#xA;3x Klebstoff&#xA;1x Kohle" ID="315"/>
+  <string value="Eine Tür ist ganz praktisch, wenn man nicht will, dass nachts fiese Viecher in dein Haus (oder deine Höhle, oder deine Mine...) kommen.&#xA;&#xA;2x Holz&#xA;2x Eisen" ID="316"/>
+  <string value="KABOOOOM! Mehr ist dazu nicht zu sagen.&#xA;&#xA;1x Kohle&#xA;1x Schwefel&#xA;1x Salpeter" ID="317"/>
+  <string value="Ein Steinofen! Dein erster Schritt zu unbegrenzter Macht und Stärke! Hier kannst du abgebaute Erze schmelzen oder anderes verbrennen.&#xA;&#xA;8x Stein" ID="318"/>
+  <string value="Dieser Klebstoff leimt ALLES zusammen. Besser nicht in den Bart schmieren!!! Die Herstellung ist recht einfach...&#xA;&#xA;1x Erde&#xA;1x Schleim" ID="319"/>
+  <string value="Diese Rüstung schützt vor diversen Gefahren, wie Pfeile, saurer Regen und deiner Dummheit.&#xA;&#xA;8x Eisen&#xA;3x Klebstoff" ID="320"/>
+  <string value="Ein solide Verarbeiteter Eisenhelm, der dich vor Schlägen, Steinen und herabfallenden Klaviern schützt.&#xA;&#xA;4x Eisen&#xA;1x Klebstoff" ID="321"/>
+  <string value="Ein Ring aus Eisen. So einen kann jeder gewöhnlicher Schmied herstellen. Er bringt dir zufällige Verbesserungen.&#xA;&#xA;2x Eisen" ID="322"/>
+  <string value="Diese eiserne Leggins schränken die Bewegungsfreiheit zwar ein wenig ein, schützen die Beine aber ganz wunderbar.&#xA;&#xA;5x Eisen&#xA;2x Klebstoff" ID="323"/>
+  <string value="Mit diesen drei wunderbaren Holzleitern kannst du endlich aus den Löchern, in die du hineingefallen bist, wieder hinaussteigen.&#xA;&#xA;6x Stab" ID="324"/>
+  <string value="Der Zweck einer Laterne dürfte bekannt sein. Man kann sie tragen, oder auf den Boden stellen.&#xA;&#xA;3x Eisen&#xA;1x Kerze" ID="325"/>
+  <string value="Eine solide Lederrüstung schützt zumindest vor dem Ärgsten. Wenn allerdings ein Oger auf dich draufkloppt, hilft dir eine Lederrüstung nicht mehr viel.&#xA;&#xA;5x Leder" ID="326"/>
+  <string value="Die schicke Lederkappe gehört zur Standardausrüstung eines jeden Minenarbeiters, da sie unter anderem auf wundersame Weise zu mehr Glück verhilft.&#xA;&#xA;3x Leder" ID="327"/>
+  <string value="Diese edle Marmorwand würde einen Palast sehr schön schmücken. Natürlich könnt ihr sie auch in eine Hütte einbauen, aber...&#xA;&#xA;2x Marmor" ID="328"/>
+  <string value="Mit einer Eisenspitzhacke lässt sich dann doch besser graben, als mit der Hand.&#xA;&#xA;2x Stab&#xA;1x Eisen" ID="329"/>
+  <string value="Sägemehl ist die Grundzutat für so manches zwergische Rezept. Lecker!&#xA;&#xA;1x Holz" ID="330"/>
+  <string value="Eine Wand aus Stein. Man kann sie z.B. als Rückwand eines Hauses benutzen.&#xA;&#xA;2x Stein" ID="331"/>
+  <string value="Ein gutes Eisenschwert. Optimal zur Abwehr von Goblins, Sprechenden Bäumen, Zwergen ohne Bart, dicken Ratten oder Maulwürfen.&#xA;&#xA;3x Eisen&#xA;1x Stab" ID="332"/>
+  <string value="Dieser Tisch dient zur Dekoration deines Hauses. Er kann absolut nichts.&#xA;&#xA;4x Holz" ID="333"/>
+  <string value="Eine Fackel erhellt einen großen Umkreis. Man kann sie an auf den Boden Stellen, oder an einer Rückwand befestigen.&#xA;&#xA;1x Stab&#xA;1x Wachs" ID="334"/>
+  <string value="Ein Holzstab, der absolut nichts bringt. Na gut, man kann ihn weiterverarbeiten, aber ansonsten ist er ziemlich nutzlos.&#xA;&#xA;1x Holz" ID="335"/>
+  <string value="Eine Wand aus Holz. Man kann sie z.B. als Rückwand eines Hauses benutzen.&#xA;&#xA;2x Holz" ID="336"/>
+
+  <!--Cooking-->
+  <string value="Kochen" ID="900"/>
+  <string value="Das gute alte Zwergenbrot. Es ist so hart, dass du dir daran die Zähne ausbeißen würdest, wenn du noch welche hättest...&#xA;Erhöht die Stärke kurzfristig.&#xA;&#xA;Zutaten: 1x Sägespäne, 1x Schleim" ID="901"/>
+  <string value="Met, Hauptnahrungsmittel jedes Zwergs. Verleiht einem Zwerg wieder Lebenskraft, wenn er angeschlagen ist.&#xA;&#xA;Zutaten: 2x Honig" ID="902"/>
+  <string value="Ein paar Radieschen in Schleim kochen und fertig ist die Paradieschensuppe. Sie schmeckt nicht nur paradiesisch, sondern erhöht auch die Rüstung.&#xA;&#xA;Zutaten: 1x Schleim, 2x Radieschen" ID="903"/>
+  <string value="Ein Schleimpudding schmeckt zwar nicht, gehört aber zur Standardausrüstung eines jeden Magiers, da er dessen magische Kraft schneller regenerieren lässt.&#xA;&#xA;Zutaten: 2x Schleim" ID="904"/>
 
   <!--Things-->
-  <string value ="Pickaxe (Iron)" ID="100"/>
-  <string value ="Ironsword" ID="101"/>
-  <string value ="Woodstaff" ID="102"/>
+  <string value ="Erde" ID="1000"/>
+  <string value ="Stein" ID="1001"/>
+  <string value ="Kohleblock" ID="1002"/>
+  <string value="Eisenblock" ID="1003"/>
+
+  <string value="Goldblock" ID="1004"/>
+  <string value="Arcanusblock" ID="1005"/>
+  <string value="Marmor" ID="1006"/>
+  <string value="Schwefelblock" ID="1007"/>
+  <string value="Salpeterblock" ID="1008"/>
+  <string value="Holz" ID="1009"/>
+  <string value="Baumstamm" ID="1010"/>
+  <string value="Baumkrone" ID="1011"/>
+  <string value="Ofen" ID="1012"/>
+  <string value="Schrank" ID="1013"/>
+  <string value="Tür" ID="1014"/>
+  <string value="Truhe" ID="1015"/>
+  <string value="Tisch" ID="1016"/>
+  <string value="Laterne" ID="1017"/>
+  <string value="Bienenkiste" ID="1018"/>
+  <string value="Fackel" ID="1019"/>
+  <string value="Kessel" ID="1020"/>
+  <string value="Kleeblatt" ID="1021"/>
+  <string value="Radieschen" ID="1022"/>
+  <string value="Pilz" ID="1023"/>
+  <string value="Stalagtit" ID="1024"/>
+  <string value="Müllhaufen" ID="1025"/>
+  <string value="Steinziegel" ID="1026"/>
+  <string value="Prinzessinnenkäfig" ID="1027"/>
+  <string value="Grundgestein" ID="1028"/>
+  <string value="Bienenkorb" ID="1029"/>
+  <string value="Leiter" ID="1030"/>
+  <string value="Metallstäbe" ID="1031"/>
+  <string value="Steinwand" ID="1032"/>
+  <string value="Holzwand" ID="1033"/>
+  <string value="Marmorwand" ID="1034"/>
+  <string value="Steinziegelwand" ID="1035"/>
+  <string value="Kohle" ID="1036"/>
+  <string value="Holzstab" ID="1037"/>
+  <string value="Eisenerz" ID="1038"/>
+  <string value="Eisen" ID="1039"/>
+  <string value="Golderz" ID="1040"/>
+  <string value="Gold" ID="1041"/>
+  <string value="Kleber" ID="1042"/>
+  <string value="Arcanus" ID="1043"/>
+  <string value="Schleim" ID="1044"/>
+  <string value="Rezept" ID="1045"/>
+  <string value="Wachs" ID="1046"/>
+  <string value="Kochbuch" ID="1047"/>
+  <string value="Sägemehl" ID="1048"/>
+  <string value="Diadochit" ID="1049"/>
+  <string value="Dynamit" ID="1050"/>
+  <string value="Schwefel" ID="1051"/>
+  <string value="Salpeter" ID="1052"/>
+  <string value="Leder" ID="1053"/>
+  <string value="Knochen" ID="1054"/>
+  <string value="Schlüssel" ID="1055"/>
+  <string value="Honig" ID="1056"/>
+  <string value="Met" ID="1057"/>
+  <string value="Schleimpudding" ID="1058"/>
+  <string value="Paradischensuppe" ID="1059"/>
+  <string value="Zwergenbrot" ID="1060"/>
+  <string value="Spitzhacke (Eisen)" ID="1061"/>
+  <string value="Eisenschwert" ID="1062"/>
+  <string value="Kampfaxt" ID="1063"/>
+  <string value="Kampfstein" ID="1064"/>
+  <string value="Goblindolch" ID="1065"/>
+  <string value="Eisenhelm" ID="1066"/>
+  <string value="Eisenrüstung" ID="1067"/>
+  <string value="Eisenleggins" ID="1068"/>
+  <string value="Eisenring" ID="1069"/>
+  <string value="Arcanusring" ID="1070"/>
+  <string value="Zauberhut" ID="1071"/>
+  <string value="Kerze" ID="1072"/>
+  <string value="Diadochitrüstung" ID="1073"/>
+  <string value="Lederrüstung" ID="1074"/>
+  <string value="Lederhelm" ID="1075"/>
+  <string value="Ring des Vollseltenseins" ID="1076"/>
+  <string value="Magiepunkt" ID="1077"/>
+
+
+  <!--Unterschiedliches-->
+  <string value="Level" ID="3000"/>
+  <string value="Language" ID="3001"/>
+  <string value="English" ID="3002"/>
+  <string value="Deutsch" ID="3003"/>
 
 </stringtable>
