@@ -19,8 +19,11 @@ public:
 	//Sets the button's position
 	void SetPos(int _x, int _y);
 
+	//sets the scale of the button
+	void SetScale(float _x, float _y);
+
 	//sets the buttontext
-	void SetButtontext(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style);
+	void SetButtontext(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style = sf::Text::Style::Regular);
 
 	//sets the buttonstring
 	void SetButtonstring(std::string const &_buttonstring);

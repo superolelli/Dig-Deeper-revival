@@ -7,6 +7,7 @@ int main()
 	g_pTextures->LoadTextures();
 	g_pFonts->LoadFonts();
 	g_pSounds->LoadSounds();
+	g_pStringContainer->LoadStrings(CStringContainer::Languages::German);
 
 	//start the engine
 	CGameEngine engine;

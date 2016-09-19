@@ -41,6 +41,12 @@ void CButton::SetPos(int _x, int _y)
 }
 
 
+void CButton::SetScale(float _x, float _y)
+{
+	m_ButtonSprite.SetScale(_x, _y);
+	m_Buttontext.setCharacterSize(static_cast<int>(static_cast<float>(m_Buttontext.getCharacterSize())* _x));
+}
+
 //specifies the attributes of the buttontext
 void CButton::SetButtontext(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style)
 {

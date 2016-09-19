@@ -1,8 +1,12 @@
-﻿  main.cpp
-  TextureManager.cpp
-  SoundManager.cpp
+﻿  TextureManager.cpp
   FontManager.cpp
   MainMenu.cpp
   Generating Code...
+  Compiling...
+  main.cpp
+  Button.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Gameengine.cpp
   Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.pdb (Full PDB)

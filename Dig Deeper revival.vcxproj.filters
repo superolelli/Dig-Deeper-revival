@@ -46,9 +46,6 @@
     <Filter Include="Headerdateien\Game\Ressources">
       <UniqueIdentifier>{a152bebb-7916-4b69-95d7-0742b4e9a615}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Framework\Services">
-      <UniqueIdentifier>{f1d7ea45-ec94-4f40-b19d-3ad8756db9ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Game\Ressources">
       <UniqueIdentifier>{ec41cd3f-0271-4ed4-9d79-7a1ed3f20a63}</UniqueIdentifier>
     </Filter>
@@ -88,6 +85,9 @@
       <Filter>Quelldateien\Game\Ressources</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Ressources\FontManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Ressources\StringManager.cpp">
       <Filter>Quelldateien\Game\Ressources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -135,6 +135,12 @@
       <Filter>Headerdateien\Game\Ressources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Ressources\TextureManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\StringManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\StringNames.hpp">
       <Filter>Headerdateien\Game\Ressources</Filter>
     </ClInclude>
   </ItemGroup>

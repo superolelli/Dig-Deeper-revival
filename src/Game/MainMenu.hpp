@@ -9,6 +9,7 @@
 #include "Ressources\TextureManager.hpp"
 #include "Ressources\FontManager.hpp"
 #include "Ressources\SoundManager.hpp"
+#include "Ressources\StringManager.hpp"
 
 
 class CMainMenu : public CGameState
@@ -29,6 +30,12 @@ public:
 
 private:
 
-	CButton m_button;
+	CSprite m_Background;
+	CButton m_QuitButton;
+	CButton m_PlayButton;
+	CButton m_OptionsButton;
+	CButton m_HighscoreButton;
+
+	void RenderButtons();
 
 };

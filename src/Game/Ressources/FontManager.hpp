@@ -12,4 +12,5 @@ public:
 
 	//returns a font
 	sf::Font f_opine;
+	sf::Font f_valken;
 };
