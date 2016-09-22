@@ -29,12 +29,10 @@ public:
 
 
 private:
+	enum Buttons{Play, Options, Highscore, Quit};
 
 	CSprite m_Background;
-	CButton m_QuitButton;
-	CButton m_PlayButton;
-	CButton m_OptionsButton;
-	CButton m_HighscoreButton;
+	CButton m_Buttons[4];
 
 	void RenderButtons();
 
