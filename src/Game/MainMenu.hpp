@@ -6,10 +6,9 @@
 #include "../Framework/Gui/Button.hpp"
 #include "../Framework/Gui/Beam.hpp"
 
-#include "Ressources\TextureManager.hpp"
-#include "Ressources\FontManager.hpp"
-#include "Ressources\SoundManager.hpp"
-#include "Ressources\StringManager.hpp"
+#include "../Game/Ressources/Resources.hpp"
+
+#include "Menus\Options.hpp"
 
 
 class CMainMenu : public CGameState

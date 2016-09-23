@@ -49,6 +49,12 @@
     <Filter Include="Quelldateien\Game\Ressources">
       <UniqueIdentifier>{ec41cd3f-0271-4ed4-9d79-7a1ed3f20a63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Game\Menus">
+      <UniqueIdentifier>{5c7f0cd3-c757-4244-b45a-316046868391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game\Menus">
+      <UniqueIdentifier>{d8dda033-d61b-461a-8744-d8fba946a8ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -89,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="src\Game\Ressources\StringManager.cpp">
       <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\Options.cpp">
+      <Filter>Quelldateien\Game\Menus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="src\Game\Ressources\StringNames.hpp">
       <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ressources\Resources.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Menus\Options.hpp">
+      <Filter>Headerdateien\Game\Menus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

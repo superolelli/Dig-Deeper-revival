@@ -66,8 +66,13 @@ private:
 
 	bool m_running;
 
+	bool m_popState;     //true if the last state needs to be popped
+
 	//clears all states
 	void ClearStates();
+
+	//checks if a state needs to be popped
+	void CheckStates();
 };
 
 

@@ -27,6 +27,7 @@
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
     <ClCompile Include="src\Game\MainMenu.cpp" />
+    <ClCompile Include="src\Game\Menus\Options.cpp" />
     <ClCompile Include="src\Game\Ressources\FontManager.cpp" />
     <ClCompile Include="src\Game\Ressources\SoundManager.cpp" />
     <ClCompile Include="src\Game\Ressources\StringManager.cpp" />
@@ -46,7 +47,9 @@
     <ClInclude Include="src\Framework\Time.hpp" />
     <ClInclude Include="src\Framework\Window.hpp" />
     <ClInclude Include="src\Game\MainMenu.hpp" />
+    <ClInclude Include="src\Game\Menus\Options.hpp" />
     <ClInclude Include="src\Game\Ressources\FontManager.hpp" />
+    <ClInclude Include="src\Game\Ressources\Resources.hpp" />
     <ClInclude Include="src\Game\Ressources\SoundManager.hpp" />
     <ClInclude Include="src\Game\Ressources\StringManager.hpp" />
     <ClInclude Include="src\Game\Ressources\StringNames.hpp" />

@@ -77,10 +77,14 @@ void CMainMenu::Render(double _normalizedTimestep)
 void CMainMenu::RenderButtons()
 {
 	m_Buttons[Play].Render(*m_pGameEngine);
-	m_Buttons[Options].Render(*m_pGameEngine);
+
+	//if the options button was pressed: open the options page
+	if (m_Buttons[Options].Render(*m_pGameEngine))
+		m_pGameEngine->PushState(new COptions());
+
 	m_Buttons[Highscore].Render(*m_pGameEngine);
 
 	//if the quit button was pressed: quit the game
-	if (m_Buttons[Quit].Render(*m_pGameEngine) == true)
+	if (m_Buttons[Quit].Render(*m_pGameEngine))
 		m_pGameEngine->StopEngine();
 }
