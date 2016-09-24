@@ -23,6 +23,7 @@ void COptions::Init(CGameEngine *_engine)
 	{
 		b.SetButtontext(g_pFonts->f_valken, 30, sf::Color::Black);
 		b.SetScale(m_pGameEngine->m_ScaleFactor, m_pGameEngine->m_ScaleFactor);
+		b.SetPos(_engine->GetWindowSize().x / 2 - b.GetRect().width / 2, b.GetRect().top);
 	}
 }
 

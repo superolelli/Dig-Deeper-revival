@@ -4,7 +4,7 @@
 #include "../../Framework/Graphics/Sprite.hpp"
 #include "../../Framework/Gui/Button.hpp"
 
-#include "../../Game/Ressources/Resources.hpp"
+#include "../../Game/Resources/Resources.hpp"
 
 
 

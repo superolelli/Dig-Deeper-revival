@@ -81,23 +81,29 @@
     <ClCompile Include="src\Framework\Gui\Beam.cpp">
       <Filter>Quelldateien\Framework\Gui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\MainMenu.cpp">
-      <Filter>Quelldateien\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Ressources\TextureManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Ressources\SoundManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Ressources\FontManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Ressources\StringManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
-    </ClCompile>
     <ClCompile Include="src\Game\Menus\Options.cpp">
       <Filter>Quelldateien\Game\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\InitialState.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\MainMenu.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Resources\FontManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Resources\SoundManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Resources\StringManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Resources\TextureManager.cpp">
+      <Filter>Quelldateien\Game\Ressources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\GameMenu.cpp">
+      <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,29 +140,35 @@
     <ClInclude Include="src\Framework\Gui\Beam.hpp">
       <Filter>Headerdateien\Framework\Gui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game\MainMenu.hpp">
-      <Filter>Headerdateien\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\FontManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\SoundManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\TextureManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\StringManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\StringNames.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Ressources\Resources.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\Game\Menus\Options.hpp">
       <Filter>Headerdateien\Game\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\InitialState.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Menus\MainMenu.hpp">
+      <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\FontManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\Resources.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\SoundManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\StringManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\StringNames.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\TextureManager.hpp">
+      <Filter>Headerdateien\Game\Ressources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Menus\GameMenu.hpp">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
