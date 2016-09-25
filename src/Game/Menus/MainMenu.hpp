@@ -5,6 +5,7 @@
 #include "../../Framework/Graphics/Sprite.hpp"
 #include "../../Framework/Gui/Button.hpp"
 #include "../../Framework/Gui/Beam.hpp"
+#include "../../Framework/Gui/StringInput.hpp"
 
 #include "../../Game/Resources/Resources.hpp"
 

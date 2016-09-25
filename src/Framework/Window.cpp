@@ -53,6 +53,12 @@ void CWindow::ProcessEvents()
 	//sets all keystates
 	while (m_pWindow->pollEvent(event))
 	{
+		//check for text input
+		if (event.type == sf::Event::TextEntered)
+			m_textInput = event.text.unicode;
+		
+
+		//all other events
 		switch (event.type)
 		{
 		case sf::Event::KeyPressed:
@@ -105,6 +111,7 @@ void CWindow::ResetKeyStates()
 			k = Keystates::None;
 	}
 
+	m_textInput.clear();
 	m_mouseWheelMovement = 0;
 }
 
@@ -120,6 +127,7 @@ void CWindow::ClearKeyStates()
 	for (Keystates &k : m_mouseStates)
 		k = Keystates::None;
 
+	m_textInput.clear();
 	m_mouseWheelMovement = 0;
 	m_mousePosition = sf::Vector2i(0, 0);
 }

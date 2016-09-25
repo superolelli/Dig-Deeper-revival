@@ -53,6 +53,7 @@ public:
 	//getters for the key- and buttonstates
 	Keystates const &GetKeystates(KeyID _id) const { return m_Window.GetKeystates(_id); }
 	Keystates const &GetButtonstates(ButtonID _id) const { return m_Window.GetButtonstates(_id); }
+	inline std::string &GetTextInput() { return m_Window.GetTextInput(); }
 	inline int const GetMouseWheelMovement() const { return m_Window.GetMouseWheelMovement(); }
 	inline sf::Vector2i const &GetMousePos() { return m_Window.GetMousePos(); }
 

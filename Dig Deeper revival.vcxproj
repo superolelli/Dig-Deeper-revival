@@ -23,6 +23,7 @@
     <ClCompile Include="src\Framework\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Framework\Gui\Beam.cpp" />
     <ClCompile Include="src\Framework\Gui\Button.cpp" />
+    <ClCompile Include="src\Framework\Gui\StringInput.cpp" />
     <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="src\Framework\Graphics\Sprite.hpp" />
     <ClInclude Include="src\Framework\Gui\Beam.hpp" />
     <ClInclude Include="src\Framework\Gui\Button.hpp" />
+    <ClInclude Include="src\Framework\Gui\StringInput.hpp" />
     <ClInclude Include="src\Framework\Makros.hpp" />
     <ClInclude Include="src\Framework\Patterns\Observer.hpp" />
     <ClInclude Include="src\Framework\Patterns\singleton.hpp" />

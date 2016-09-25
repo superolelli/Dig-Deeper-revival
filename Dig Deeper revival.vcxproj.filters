@@ -105,6 +105,9 @@
     <ClCompile Include="src\Game\Menus\GameMenu.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Gui\StringInput.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -168,6 +171,9 @@
       <Filter>Headerdateien\Game\Ressources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Menus\GameMenu.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gui\StringInput.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
