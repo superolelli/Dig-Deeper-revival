@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\Framework\Gameengine.cpp" />
     <ClCompile Include="src\Framework\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Framework\Graphics\SpriteWithText.cpp" />
     <ClCompile Include="src\Framework\Gui\Beam.cpp" />
     <ClCompile Include="src\Framework\Gui\Button.cpp" />
     <ClCompile Include="src\Framework\Gui\StringInput.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="src\Framework\Gameengine.hpp" />
     <ClInclude Include="src\Framework\Gamestate.hpp" />
     <ClInclude Include="src\Framework\Graphics\Sprite.hpp" />
+    <ClInclude Include="src\Framework\Graphics\SpriteWithText.hpp" />
     <ClInclude Include="src\Framework\Gui\Beam.hpp" />
     <ClInclude Include="src\Framework\Gui\Button.hpp" />
     <ClInclude Include="src\Framework\Gui\StringInput.hpp" />

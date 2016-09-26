@@ -108,6 +108,9 @@
     <ClCompile Include="src\Framework\Gui\StringInput.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Framework\Graphics\SpriteWithText.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -174,6 +177,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\Gui\StringInput.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Graphics\SpriteWithText.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
