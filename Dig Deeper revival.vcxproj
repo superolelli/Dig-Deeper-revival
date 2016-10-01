@@ -21,27 +21,47 @@
   <ItemGroup>
     <ClCompile Include="src\Framework\Gameengine.cpp" />
     <ClCompile Include="src\Framework\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Framework\Graphics\SpriteWithText.cpp" />
     <ClCompile Include="src\Framework\Gui\Beam.cpp" />
     <ClCompile Include="src\Framework\Gui\Button.cpp" />
+    <ClCompile Include="src\Framework\Gui\StringInput.cpp" />
     <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
-    <ClCompile Include="src\Game\MainMenu.cpp" />
+    <ClCompile Include="src\Game\InitialState.cpp" />
+    <ClCompile Include="src\Game\Menus\GameMenu.cpp" />
+    <ClCompile Include="src\Game\Menus\MainMenu.cpp" />
+    <ClCompile Include="src\Game\Menus\Options.cpp" />
+    <ClCompile Include="src\Game\Resources\FontManager.cpp" />
+    <ClCompile Include="src\Game\Resources\SoundManager.cpp" />
+    <ClCompile Include="src\Game\Resources\StringManager.cpp" />
+    <ClCompile Include="src\Game\Resources\TextureManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Gameengine.hpp" />
     <ClInclude Include="src\Framework\Gamestate.hpp" />
     <ClInclude Include="src\Framework\Graphics\Sprite.hpp" />
+    <ClInclude Include="src\Framework\Graphics\SpriteWithText.hpp" />
     <ClInclude Include="src\Framework\Gui\Beam.hpp" />
     <ClInclude Include="src\Framework\Gui\Button.hpp" />
+    <ClInclude Include="src\Framework\Gui\StringInput.hpp" />
     <ClInclude Include="src\Framework\Makros.hpp" />
     <ClInclude Include="src\Framework\Patterns\Observer.hpp" />
     <ClInclude Include="src\Framework\Patterns\singleton.hpp" />
     <ClInclude Include="src\Framework\Patterns\Subject.hpp" />
     <ClInclude Include="src\Framework\Time.hpp" />
     <ClInclude Include="src\Framework\Window.hpp" />
-    <ClInclude Include="src\Game\MainMenu.hpp" />
+    <ClInclude Include="src\Game\InitialState.hpp" />
+    <ClInclude Include="src\Game\Menus\GameMenu.hpp" />
+    <ClInclude Include="src\Game\Menus\MainMenu.hpp" />
+    <ClInclude Include="src\Game\Menus\Options.hpp" />
+    <ClInclude Include="src\Game\Resources\FontManager.hpp" />
+    <ClInclude Include="src\Game\Resources\Resources.hpp" />
+    <ClInclude Include="src\Game\Resources\SoundManager.hpp" />
+    <ClInclude Include="src\Game\Resources\StringManager.hpp" />
+    <ClInclude Include="src\Game\Resources\StringNames.hpp" />
+    <ClInclude Include="src\Game\Resources\TextureManager.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3630C7F1-8499-4618-8673-6C175E7198B4}</ProjectGuid>
@@ -96,8 +116,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\SFML-2.4.0\lib;$(SolutionDir)\Dependencies\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\Dependencies\SFML-2.4.0\include;$(SolutionDir)\Dependencies\boost_1_61_0;$(IncludePath)</IncludePath>
     <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,8 +129,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>F:\Dig Deeper revival\Dependencies\SFML-2.4.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\SFML-2.4.0\lib;$(SolutionDir)\Dependencies\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\Dependencies\SFML-2.4.0\include;$(SolutionDir)\Dependencies\boost_1_61_0;$(IncludePath)</IncludePath>
     <IntDir>$(Configuration)\temps\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

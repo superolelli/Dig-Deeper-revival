@@ -3,6 +3,7 @@
 
 #include "../Graphics/Sprite.hpp"
 #include <sstream>
+#include <memory>
 
 class CBeam
 {
@@ -11,7 +12,7 @@ public:
 	~CBeam();
 
 	//Textures the sprite
-	void Load(sf::Texture const &_beamTexture, sf::Texture const &_frameTexture, int *_value, int *_maxValue);
+	void Load(sf::Texture const &_beamTexture, sf::Texture const &_frameTexture, std::shared_ptr<int> _value, std::shared_ptr<int> _maxValue);
 
 	//Sets the Position for float values
 	void SetPos(float _x, float _y);
@@ -26,7 +27,7 @@ public:
 	void SetCharacterSize(int _size){m_text.setCharacterSize(_size);}
 
 	//Renders the beam
-	void Render(sf::RenderTarget *_target, bool _withNumbers = false);
+	void Render(sf::RenderTarget &_target, bool _withNumbers = false);
 
 
 private:
@@ -34,8 +35,8 @@ private:
 	CSprite m_beam;                   //the beam sprite
 	CSprite m_frame;                //the frame sprite
 
-	int * m_pValue;                    //the current value
-	int *m_pMaxValue;                //the maximum of the value
+	std::weak_ptr<int> m_pValue;                    //the current value
+	std::weak_ptr<int> m_pMaxValue;                //the maximum of the value
 
 	sf::Text m_text;                    //the text
 

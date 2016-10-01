@@ -1,12 +1,13 @@
-#include"Game\MainMenu.hpp"
+#include"Game\InitialState.hpp"
 
 
 int main()
 {
+	//start the engine
 	CGameEngine engine;
 
 	engine.Init("Dig Deeper");
-	engine.PushState(new CMainMenu());
+	engine.PushState(new CInitialState());
 	engine.Run();
 
 	engine.Quit();

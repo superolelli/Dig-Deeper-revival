@@ -36,6 +36,7 @@ public:
 	//The getters
 	Keystates const &GetKeystates(KeyID _id) const { return m_keyStates[_id]; }
 	Keystates const &GetButtonstates(ButtonID _id) const { return m_mouseStates[_id]; }
+	inline std::string &GetTextInput() { return m_textInput; }
 	inline int const GetMouseWheelMovement() const { return m_mouseWheelMovement; }
 	inline sf::Vector2i const &GetMousePos()  { return m_mousePosition; }
 
@@ -44,6 +45,7 @@ private:
 	//arrays for saving the key- and buttonstates
 	Keystates m_keyStates[sf::Keyboard::KeyCount];
 	Keystates m_mouseStates[sf::Mouse::ButtonCount];
+	std::string m_textInput;
 	int m_mouseWheelMovement;
 	sf::Vector2i m_mousePosition;
 

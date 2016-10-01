@@ -2,19 +2,24 @@
 
 
 #include <vector>
+#include <memory>
 #include "Time.hpp"
 #include "Window.hpp"
 
 class CGameState;
 
 #define MS_PER_UPDATE 16
-
+#define SCREEN_SIZE_X 1920
 
 
 class CGameEngine
 {
 public:
-	void Init(std::string _name);
+
+	//the scale factor for sprites
+	static float m_ScaleFactor;
+
+	void Init(std::string const &_name);
 	void Run();
 	void Quit();
 
@@ -30,11 +35,11 @@ public:
 	//stops the engine
 	void StopEngine() { m_running = false; }
 
-
-
-
 	//Returns the render window
-	sf::RenderWindow *GetWindow() { return m_Window.GetRenderWindow(); }
+	sf::RenderWindow &GetWindow() { return *m_Window.GetRenderWindow(); }
+
+	//Returns the size of the render window
+	sf::Vector2u &GetWindowSize() { return m_Window.GetRenderWindow()->getSize(); }
 
 	//clears the window
 	void ClearWindow(sf::Color const &_color) { m_Window.Clear(_color); }
@@ -48,6 +53,7 @@ public:
 	//getters for the key- and buttonstates
 	Keystates const &GetKeystates(KeyID _id) const { return m_Window.GetKeystates(_id); }
 	Keystates const &GetButtonstates(ButtonID _id) const { return m_Window.GetButtonstates(_id); }
+	inline std::string &GetTextInput() { return m_Window.GetTextInput(); }
 	inline int const GetMouseWheelMovement() const { return m_Window.GetMouseWheelMovement(); }
 	inline sf::Vector2i const &GetMousePos() { return m_Window.GetMousePos(); }
 
@@ -61,6 +67,13 @@ private:
 
 	bool m_running;
 
+	bool m_popState;     //true if the last state needs to be popped
+
 	//clears all states
 	void ClearStates();
+
+	//checks if a state needs to be popped
+	void CheckStates();
 };
+
+

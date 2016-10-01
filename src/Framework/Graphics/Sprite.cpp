@@ -133,21 +133,21 @@ void CSprite::SetScale(float _x, float _y)
 }
 
 //render "normal" sprites
-void CSprite::Render(sf::RenderTarget *_target, sf::IntRect *clip)
+void CSprite::Render(sf::RenderTarget &_target, sf::IntRect *clip)
 {
 	//check if a clip was given
 	if (clip != nullptr)
 	{
 		m_Sprite.setTextureRect(*clip);
-		_target->draw(m_Sprite);
+		_target.draw(m_Sprite);
 	}
 	else
-		_target->draw(m_Sprite);
+		_target.draw(m_Sprite);
 }
 
 
 //render animated sprites
-void CSprite::Render(sf::RenderTarget *_target, float _fFrameNumber, bool _picturewise)
+void CSprite::Render(sf::RenderTarget &_target, float _fFrameNumber, bool _picturewise)
 {
 	if (_picturewise)
 	{

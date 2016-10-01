@@ -50,10 +50,10 @@ public:
 	void SetColor(int _r, int _g, int _b, int _a = 255);
 
 	//Renders a normal sprite
-	void Render(sf::RenderTarget *_target, sf::IntRect *clip = nullptr);
+	void Render(sf::RenderTarget &_target, sf::IntRect *clip = nullptr);
 
 	//Renders an animated sprite (if picturewise is true, the frameNumber is casted to an int)
-	void Render(sf::RenderTarget *_target, float _fFrameNumber, bool _picturewise = true);
+	void Render(sf::RenderTarget &_target, float _fFrameNumber, bool _picturewise = true);
 
 	//returns the sprite's rectangle
 	sf::IntRect const &GetRect() const { return m_Rect; }

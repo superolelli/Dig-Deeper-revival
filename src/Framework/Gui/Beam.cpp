@@ -15,7 +15,7 @@ CBeam::~CBeam()
 
 
 
-void CBeam::Load(sf::Texture const &_beamTexture, sf::Texture const &_frameTexture, int *_value, int *_maxValue)
+void CBeam::Load(sf::Texture const &_beamTexture, sf::Texture const &_frameTexture, std::shared_ptr<int> _value, std::shared_ptr<int> _maxValue)
 {
 	//Set the texture
 	m_beam.Load(_beamTexture, 2, _beamTexture.getSize().x / 2, _beamTexture.getSize().y);
@@ -47,21 +47,28 @@ void CBeam::SetPos(float _x, float _y)
 
 
 
-void CBeam::Render(sf::RenderTarget *_target, bool _withNumbers)
+void CBeam::Render(sf::RenderTarget &_target, bool _withNumbers)
 {
-	//renders the beam
-	m_beam.Render(_target, (float)(*m_pValue) / (float)(*m_pMaxValue), false);
-	m_frame.Render(_target);
+	//check if the the pointers point to something
+	auto val = m_pValue.lock();
+	auto mVal = m_pMaxValue.lock();
 
-	if (_withNumbers)
+	if (val != nullptr && mVal != nullptr)
 	{
-		std::stringstream stream("");
-		stream.str("");
+		//renders the beam
+		m_beam.Render(_target, (float)(*val) / (float)(*mVal), false);
+		m_frame.Render(_target);
 
-		stream << *m_pValue << "/" << *m_pMaxValue;
-		m_text.setString(stream.str());
-		m_text.setPosition(m_beam.GetRect().width / 2 + m_beam.GetRect().left - m_text.getGlobalBounds().width / 2, m_beam.GetRect().height / 2 + m_beam.GetRect().top - m_text.getGlobalBounds().height / 2 - 2);
-		_target->draw(m_text);
+		if (_withNumbers)
+		{
+			std::stringstream stream("");
+			stream.str("");
+
+			stream << *val << "/" << *mVal;
+			m_text.setString(stream.str());
+			m_text.setPosition(m_beam.GetRect().width / 2 + m_beam.GetRect().left - m_text.getGlobalBounds().width / 2, m_beam.GetRect().height / 2 + m_beam.GetRect().top - m_text.getGlobalBounds().height / 2 - 2);
+			_target.draw(m_text);
+		}
 	}
 }
 
