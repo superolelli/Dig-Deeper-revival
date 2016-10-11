@@ -31,6 +31,7 @@
     <ClCompile Include="src\Game\InitialState.cpp" />
     <ClCompile Include="src\Game\Menus\GameMenu.cpp" />
     <ClCompile Include="src\Game\Menus\MainMenu.cpp" />
+    <ClCompile Include="src\Game\Menus\NewGame.cpp" />
     <ClCompile Include="src\Game\Menus\Options.cpp" />
     <ClCompile Include="src\Game\Resources\FontManager.cpp" />
     <ClCompile Include="src\Game\Resources\SoundManager.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="src\Game\InitialState.hpp" />
     <ClInclude Include="src\Game\Menus\GameMenu.hpp" />
     <ClInclude Include="src\Game\Menus\MainMenu.hpp" />
+    <ClInclude Include="src\Game\Menus\NewGame.hpp" />
     <ClInclude Include="src\Game\Menus\Options.hpp" />
     <ClInclude Include="src\Game\Resources\FontManager.hpp" />
     <ClInclude Include="src\Game\Resources\Resources.hpp" />

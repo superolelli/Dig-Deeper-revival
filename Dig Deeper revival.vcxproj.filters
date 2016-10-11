@@ -43,17 +43,17 @@
     <Filter Include="Quelldateien\Game">
       <UniqueIdentifier>{6c020f79-264c-4cc7-966d-2385c5a86bb1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Game\Ressources">
-      <UniqueIdentifier>{a152bebb-7916-4b69-95d7-0742b4e9a615}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Quelldateien\Game\Ressources">
-      <UniqueIdentifier>{ec41cd3f-0271-4ed4-9d79-7a1ed3f20a63}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headerdateien\Game\Menus">
       <UniqueIdentifier>{5c7f0cd3-c757-4244-b45a-316046868391}</UniqueIdentifier>
     </Filter>
     <Filter Include="Quelldateien\Game\Menus">
       <UniqueIdentifier>{d8dda033-d61b-461a-8744-d8fba946a8ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Game\Resources">
+      <UniqueIdentifier>{a152bebb-7916-4b69-95d7-0742b4e9a615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Game\Resources">
+      <UniqueIdentifier>{ec41cd3f-0271-4ed4-9d79-7a1ed3f20a63}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,31 +84,34 @@
     <ClCompile Include="src\Game\Menus\Options.cpp">
       <Filter>Quelldateien\Game\Menus</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\InitialState.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Menus\MainMenu.cpp">
-      <Filter>Quelldateien\Game</Filter>
-    </ClCompile>
     <ClCompile Include="src\Game\Resources\FontManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
+      <Filter>Quelldateien\Game\Resources</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Resources\SoundManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
+      <Filter>Quelldateien\Game\Resources</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Resources\StringManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
+      <Filter>Quelldateien\Game\Resources</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Resources\TextureManager.cpp">
-      <Filter>Quelldateien\Game\Ressources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Menus\GameMenu.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Framework\Gui\StringInput.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Game\Resources</Filter>
     </ClCompile>
     <ClCompile Include="src\Framework\Graphics\SpriteWithText.cpp">
+      <Filter>Quelldateien\Framework\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Gui\StringInput.cpp">
+      <Filter>Quelldateien\Framework\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\GameMenu.cpp">
+      <Filter>Quelldateien\Game\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\InitialState.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\MainMenu.cpp">
+      <Filter>Quelldateien\Game\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Menus\NewGame.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,37 +152,40 @@
     <ClInclude Include="src\Game\Menus\Options.hpp">
       <Filter>Headerdateien\Game\Menus</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game\InitialState.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Menus\MainMenu.hpp">
-      <Filter>Headerdateien\Game</Filter>
-    </ClInclude>
     <ClInclude Include="src\Game\Resources\FontManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game\Resources\Resources.hpp">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Resources\SoundManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Resources\StringManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Resources\StringNames.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Resources\TextureManager.hpp">
-      <Filter>Headerdateien\Game\Ressources</Filter>
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Menus\GameMenu.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Framework\Gui\StringInput.hpp">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\Game\Menus</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\Graphics\SpriteWithText.hpp">
+      <Filter>Headerdateien\Framework\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Gui\StringInput.hpp">
+      <Filter>Headerdateien\Framework\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\Resources.hpp">
+      <Filter>Headerdateien\Game\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\InitialState.hpp">
+      <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Menus\MainMenu.hpp">
+      <Filter>Headerdateien\Game\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Menus\NewGame.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
