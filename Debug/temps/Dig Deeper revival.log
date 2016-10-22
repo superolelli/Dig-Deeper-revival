@@ -1,3 +1,4 @@
-﻿  Sprite.cpp
-  Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.exe
-  Dig Deeper revival.vcxproj -> C:\Dig Deeper\Dig-Deeper-revival\Debug\Dig Deeper revival.pdb (Full PDB)
+﻿  NewGame.cpp
+f:\dig deeper revival\src\game\menus\newgame.cpp(34): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
+  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
+  Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)

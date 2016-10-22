@@ -3,7 +3,7 @@
 
 #include "Gameengine.hpp"
 
-class CGameState
+class GameState
 {
 public:
 	virtual void Init(CGameEngine*_engine) = 0;
@@ -17,6 +17,6 @@ public:
 	virtual void Render(double _normalizedTimestep) = 0;
 
 protected: 
-	CGameState() { }
+	GameState() { }
 	CGameEngine *m_pGameEngine;   //a pointer to the game engine
 };

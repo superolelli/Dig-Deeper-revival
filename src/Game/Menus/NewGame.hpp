@@ -11,7 +11,7 @@
 #include "../../Game/Resources/Resources.hpp"
 
 
-class CNewGame : public CGameState
+class NewGameMenu : public GameState
 {
 
 public:
@@ -32,12 +32,21 @@ private:
 	enum Buttons {ClassLeft, ClassRight, WorldLeft, WorldRight, StartGame, Return};
 	enum Classes {Miner, Builder, Warrior, Mage, NumClasses};
 
-	CSprite m_Background;
-	CSpriteWithText m_ClassDescription[NumClasses];
-	CButton m_Buttons[6];
+	CSprite background;
 
-	CStringInput m_GameName;
+	SpriteWithText classDescriptions[NumClasses];
+
+	SpriteWithText worldSizePanel;
+	CButton buttons[6];
+
+	CStringInput gameNameInputField;
 	
+	int currentClass;
+	int currentWorldSize;
+
+	void LoadWorldSizePanel();
+	void LoadButtons();
+	void LoadClassDescriptions();
 
 	void RenderButtons();
 

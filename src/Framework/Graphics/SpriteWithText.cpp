@@ -2,65 +2,115 @@
 
 
 
-void CSpriteWithText::Load(sf::Texture const & _texture)
+void SpriteWithText::Load(sf::Texture const & _texture)
 {
-	m_sprite.Load(_texture);
-	m_texts.clear();
+	sprite.Load(_texture);
+	allTextsOnSprite.clear();
 }
 
 
 
-int CSpriteWithText::AddText(std::string const &_str, sf::Font const & _font, int _characterSize, int _xPos, int _yPos, sf::Color const & _color, sf::Text::Style _style)
+int SpriteWithText::AddText(std::string const &_str)
 {
-	//sets up the text
 	sf::Text text;
 	text.setString(_str);
-	text.setFont(_font);
-	text.setCharacterSize(_characterSize);
-	text.setFillColor(_color);
-	text.setStyle(_style);
-	text.setPosition(static_cast<float>(m_sprite.GetRect().left + _xPos), static_cast<float>(m_sprite.GetRect().top + _yPos));
+	text.setFillColor(sf::Color::Black);
+	text.setPosition(static_cast<float>(sprite.GetRect().left), static_cast<float>(sprite.GetRect().top));
 
-	//adds the text
-	m_texts.push_back(text);
+	allTextsOnSprite.push_back(text);
 
-	//returns the index of the tex
-	return m_texts.size() -1;
+	return allTextsOnSprite.size() - 1;
 }
 
 
-void CSpriteWithText::SetPos(int _x, int _y)
+void SpriteWithText::SetTextFont(int _textID, sf::Font const & _font)
+{
+	allTextsOnSprite[_textID].setFont(_font);
+}
+
+
+void SpriteWithText::SetTextCharacterSize(int _textID, int _characterSize)
+{
+	allTextsOnSprite[_textID].setCharacterSize(_characterSize);
+}
+
+
+void SpriteWithText::SetTextColor(int _textID, sf::Color const & _color)
+{
+	allTextsOnSprite[_textID].setFillColor(_color);
+}
+
+
+void SpriteWithText::SetTextStyle(int _textID, sf::Text::Style _style)
+{
+	allTextsOnSprite[_textID].setStyle(_style);
+}
+
+
+
+void SpriteWithText::SetTextPos(int _textID, int _xPos, int _yPos)
+{
+	allTextsOnSprite[_textID].setPosition(sprite.GetRect().left + _xPos, sprite.GetRect().top + _yPos);
+}
+
+
+void SpriteWithText::SetTextPosXCentered(int _textID)
+{
+	allTextsOnSprite[_textID].setPosition(sprite.GetRect().left + sprite.GetRect().width/2 - allTextsOnSprite[_textID].getGlobalBounds().width/2, allTextsOnSprite[_textID].getGlobalBounds().top);
+}
+
+
+
+void SpriteWithText::SetTextPosYCentered(int _textID)
+{
+	allTextsOnSprite[_textID].setPosition(allTextsOnSprite[_textID].getGlobalBounds().left, sprite.GetRect().top + sprite.GetRect().height/2 - allTextsOnSprite[_textID].getGlobalBounds().height/2);
+}
+
+
+void SpriteWithText::SetTextPosCentered(int _textID)
+{
+	SetTextPosXCentered(_textID);
+	SetTextPosYCentered(_textID);
+}
+
+void SpriteWithText::ChangeString(int _textID, std::string const &_str)
+{
+	allTextsOnSprite[_textID].setString(_str);
+}
+
+
+void SpriteWithText::SetPos(int _x, int _y)
 {
 	//get the current position of the sprite
-	auto xSprite = m_sprite.GetRect().left;
-	auto ySprite = m_sprite.GetRect().top;
+	auto xSprite = sprite.GetRect().left;
+	auto ySprite = sprite.GetRect().top;
 
 	//change the position of the sprite
-	m_sprite.SetPos(_x, _y);
+	sprite.SetPos(_x, _y);
 
 	//change the position of the texts
-	for (auto t : m_texts)
+	for (auto t : allTextsOnSprite)
 		t.setPosition(_x + (t.getPosition().x - xSprite), _y + (t.getPosition().y - ySprite));
 }
 
 
-void CSpriteWithText::Scale(float _x, float _y)
+void SpriteWithText::Scale(float _x, float _y)
 {
 	//scale the sprite
-	m_sprite.SetScale(_x, _y);
+	sprite.SetScale(_x, _y);
 
 	//scale the texts
-	for (auto t : m_texts)
+	for (auto t : allTextsOnSprite)
 		t.setCharacterSize(static_cast<int>(t.getCharacterSize() * _x));
 }
 
 
-void CSpriteWithText::Render(sf::RenderTarget & _target, sf::IntRect * _clip)
+void SpriteWithText::Render(sf::RenderTarget & _target, sf::IntRect * _clip)
 {
 	//renders the sprite
-	m_sprite.Render(_target, _clip);
+	sprite.Render(_target, _clip);
 
 	//renders all texts
-	for (auto t : m_texts)
+	for (auto t : allTextsOnSprite)
 		_target.draw(t);
 }

@@ -14,7 +14,7 @@ public:
     ~CButton();
 
 	//Loads the button, defines the type and sets the position
-	void Load(sf::Texture const &_texture, int _x, int _y, Buttontypes _type, std::string const &_str = "");
+	void Load(sf::Texture const &_texture, Buttontypes _type, std::string const &_str = "");
 
 	//Sets the button's position
 	void SetPos(int _x, int _y);
@@ -23,7 +23,7 @@ public:
 	void SetScale(float _x, float _y);
 
 	//sets the buttontext
-	void SetButtontext(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style = sf::Text::Style::Regular);
+	void SetButtontextAttributes(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style = sf::Text::Style::Regular);
 
 	//sets the buttonstring
 	void SetButtonstring(std::string const &_buttonstring);

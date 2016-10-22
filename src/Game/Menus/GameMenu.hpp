@@ -7,8 +7,10 @@
 
 #include "../../Game/Resources/Resources.hpp"
 
+#include "NewGame.hpp"
 
-class CGameMenu : public CGameState
+
+class CGameMenu : public GameState
 {
 
 public:

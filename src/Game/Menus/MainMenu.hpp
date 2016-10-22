@@ -12,7 +12,7 @@
 #include "GameMenu.hpp"
 
 
-class CMainMenu : public CGameState
+class CMainMenu : public GameState
 {
 
 public:

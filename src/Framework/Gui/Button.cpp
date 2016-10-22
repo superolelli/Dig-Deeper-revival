@@ -15,13 +15,13 @@ CButton::~CButton()
 
 
 //Loads the texture, sets the position and type of the button
-void CButton::Load(sf::Texture const &_texture, int _x, int _y, Buttontypes _type, std::string const &_str)
+void CButton::Load(sf::Texture const &_texture, Buttontypes _type, std::string const &_str)
 {
 	//(int)(type/2) is 2 for up/down and 3 for motion_up/motion_down buttons
 	m_ButtonSprite.Load(_texture, 2 + (int)(static_cast<int>(_type) / 2), _texture.getSize().x / (2 + (int)(static_cast<int>(_type) / 2)), _texture.getSize().y);
 
 	//set the button's position and type
-	m_ButtonSprite.SetPos(_x, _y);
+	m_ButtonSprite.SetPos(0, 0);
 	m_Buttontype = _type;
 
 	//sets the buttonstring
@@ -48,7 +48,7 @@ void CButton::SetScale(float _x, float _y)
 }
 
 //specifies the attributes of the buttontext
-void CButton::SetButtontext(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style)
+void CButton::SetButtontextAttributes(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style)
 {
 	m_Buttontext.setFont(_font);
 	m_Buttontext.setCharacterSize(_charactersize);

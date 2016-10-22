@@ -10,20 +10,20 @@ void COptions::Init(CGameEngine *_engine)
 
 	//Loads the background
 	m_Background.Load(g_pTextures->t_backgroundMainMenu);
-	m_Background.SetScale(m_pGameEngine->m_ScaleFactor, m_pGameEngine->m_ScaleFactor);
 
 	//Load the buttons
-	m_Buttons[Settings].Load(g_pTextures->t_buttonMainMenu, _engine->GetWindowSize().x / 2 - 100, _engine->GetWindowSize().y / 10, Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_settings]);
-	m_Buttons[Upgrades].Load(g_pTextures->t_buttonMainMenu, _engine->GetWindowSize().x / 2 - 100, 3 * (_engine->GetWindowSize().y / 10), Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_upgrades]);
-	m_Buttons[Achievements].Load(g_pTextures->t_buttonMainMenu, _engine->GetWindowSize().x / 2 - 100, 5 * (_engine->GetWindowSize().y / 10), Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_achievements]);
-	m_Buttons[Return].Load(g_pTextures->t_buttonMainMenu, _engine->GetWindowSize().x / 2 - 100, 7 * (_engine->GetWindowSize().y / 10), Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_return]);
+	m_Buttons[Settings].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_settings]);
+	m_Buttons[Upgrades].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_upgrades]);
+	m_Buttons[Achievements].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_achievements]);
+	m_Buttons[Return].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Down, g_pStringContainer->m_Strings[String_return]);
 
+	auto posNumber = 1;
 	//Set the scale and text for the buttons
 	for (auto &b : m_Buttons)
 	{
-		b.SetButtontext(g_pFonts->f_valken, 30, sf::Color::Black);
-		b.SetScale(m_pGameEngine->m_ScaleFactor, m_pGameEngine->m_ScaleFactor);
-		b.SetPos(_engine->GetWindowSize().x / 2 - b.GetRect().width / 2, b.GetRect().top);
+		b.SetButtontextAttributes(g_pFonts->f_valken, 30, sf::Color::Black);
+		b.SetPos(_engine->GetWindowSize().x / 2 - b.GetRect().width / 2, posNumber *(_engine->GetWindowSize().y / 10));
+		posNumber += 2;
 	}
 }
 

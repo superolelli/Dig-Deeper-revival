@@ -8,7 +8,7 @@
 
 
 
-class COptions : public CGameState
+class COptions : public GameState
 {
 public:
 	

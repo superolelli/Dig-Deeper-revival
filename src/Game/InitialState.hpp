@@ -10,7 +10,7 @@
 
 
 
-class CInitialState : public CGameState
+class CInitialState : public GameState
 {
 public:
 

@@ -1,15 +1,10 @@
 #include "Gameengine.hpp"
 #include "Gamestate.hpp"
 
-//defines the scale factor
-float CGameEngine::m_ScaleFactor;
-
 
 void CGameEngine::Init(std::string const &_name)
 {
 	m_Window.Init(_name);
-
-	m_ScaleFactor = static_cast<float>(SCREEN_SIZE_X) / static_cast<float>(m_Window.GetRenderWindow()->getSize().x);
 
 	m_popState = false;
 	m_running = true;
@@ -57,7 +52,7 @@ void CGameEngine::Run()
 
 
 
-void CGameEngine::ChangeState(CGameState * _state)
+void CGameEngine::ChangeState(GameState * _state)
 {
 	//Clear all states
 	ClearStates();
@@ -84,7 +79,7 @@ void CGameEngine::ClearStates()
 
 
 
-void CGameEngine::PushState(CGameState * _state)
+void CGameEngine::PushState(GameState * _state)
 {
 	_state->Init(this);
 	m_pStates.push_back(_state);

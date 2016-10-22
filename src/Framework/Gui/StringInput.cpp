@@ -25,8 +25,8 @@ void CStringInput::Init(sf::Font const &_font, int _characterSize, int _xPos, in
 	m_str.clear();
 
 	//set up the cursor
-	m_line[0].position = sf::Vector2f(static_cast<float>(_xPos), static_cast<float>(_yPos +5));
-	m_line[1].position = sf::Vector2f(static_cast<float>(_xPos), static_cast<float>(_yPos + 5 + _characterSize));
+	m_line[0].position = sf::Vector2f(static_cast<float>(_xPos), static_cast<float>(_yPos));
+	m_line[1].position = sf::Vector2f(static_cast<float>(_xPos), static_cast<float>(_yPos + _characterSize));
 
 	m_line[0].color = _colour;
 	m_line[1].color = _colour;

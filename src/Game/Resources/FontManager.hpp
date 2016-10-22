@@ -14,4 +14,5 @@ public:
 	sf::Font f_opine;
 	sf::Font f_valken;
 	sf::Font f_plantc;
+	sf::Font f_ltromatic;
 };
