@@ -22,7 +22,8 @@ void CGameMenu::Init(CGameEngine *_engine)
 	//Set the scale and text for the buttons
 	for (auto &b : m_Buttons)
 	{
-		b.SetButtontextAttributes(g_pFonts->f_valken, 32, sf::Color::Black);
+		b.SetButtontextFont(g_pFonts->f_valken);
+		b.SetButtontextCharactersize(32);
 		b.SetPos(_engine->GetWindowSize().x / 2 - b.GetRect().width / 2, b.GetRect().top);
 	}
 }

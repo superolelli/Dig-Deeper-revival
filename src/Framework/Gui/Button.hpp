@@ -25,6 +25,11 @@ public:
 	//sets the buttontext
 	void SetButtontextAttributes(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style = sf::Text::Style::Regular);
 
+	void SetButtontextFont(sf::Font const &_font);
+	void SetButtontextCharactersize(int _size);
+	void SetButtontextColor(sf::Color const &_color);
+	void SetButtontextStyle(sf::Text::Style _style);
+
 	//sets the buttonstring
 	void SetButtonstring(std::string const &_buttonstring);
 
@@ -43,5 +48,7 @@ private:
 	sf::Text m_Buttontext;
 
 	void RenderButtontext(CGameEngine &_engine);
+
+	void SetDefaultButtontext();
 };
 

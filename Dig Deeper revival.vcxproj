@@ -28,6 +28,7 @@
     <ClCompile Include="src\Framework\Patterns\Subject.cpp" />
     <ClCompile Include="src\Framework\Time.cpp" />
     <ClCompile Include="src\Framework\Window.cpp" />
+    <ClCompile Include="src\Game\Game.cpp" />
     <ClCompile Include="src\Game\InitialState.cpp" />
     <ClCompile Include="src\Game\Menus\GameMenu.cpp" />
     <ClCompile Include="src\Game\Menus\MainMenu.cpp" />
@@ -37,6 +38,7 @@
     <ClCompile Include="src\Game\Resources\SoundManager.cpp" />
     <ClCompile Include="src\Game\Resources\StringManager.cpp" />
     <ClCompile Include="src\Game\Resources\TextureManager.cpp" />
+    <ClCompile Include="src\Game\World.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +55,7 @@
     <ClInclude Include="src\Framework\Patterns\Subject.hpp" />
     <ClInclude Include="src\Framework\Time.hpp" />
     <ClInclude Include="src\Framework\Window.hpp" />
+    <ClInclude Include="src\Game\Game.hpp" />
     <ClInclude Include="src\Game\InitialState.hpp" />
     <ClInclude Include="src\Game\Menus\GameMenu.hpp" />
     <ClInclude Include="src\Game\Menus\MainMenu.hpp" />
@@ -64,6 +67,7 @@
     <ClInclude Include="src\Game\Resources\StringManager.hpp" />
     <ClInclude Include="src\Game\Resources\StringNames.hpp" />
     <ClInclude Include="src\Game\Resources\TextureManager.hpp" />
+    <ClInclude Include="src\Game\World.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3630C7F1-8499-4618-8673-6C175E7198B4}</ProjectGuid>

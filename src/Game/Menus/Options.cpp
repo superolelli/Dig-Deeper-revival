@@ -21,7 +21,7 @@ void COptions::Init(CGameEngine *_engine)
 	//Set the scale and text for the buttons
 	for (auto &b : m_Buttons)
 	{
-		b.SetButtontextAttributes(g_pFonts->f_valken, 30, sf::Color::Black);
+		b.SetButtontextFont(g_pFonts->f_valken);
 		b.SetPos(_engine->GetWindowSize().x / 2 - b.GetRect().width / 2, posNumber *(_engine->GetWindowSize().y / 10));
 		posNumber += 2;
 	}

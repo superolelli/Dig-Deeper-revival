@@ -28,9 +28,19 @@ void CButton::Load(sf::Texture const &_texture, Buttontypes _type, std::string c
 	m_Buttonstring = _str;
 	m_Buttontext.setString(m_Buttonstring);
 
+	SetDefaultButtontext();
+
 	m_Buttontext.setPosition(m_ButtonSprite.GetRect().left + (m_ButtonSprite.GetRect().width - m_Buttontext.getGlobalBounds().width) / 2, m_ButtonSprite.GetRect().top + (m_ButtonSprite.GetRect().height - m_Buttontext.getGlobalBounds().height) / 2);
 }
 
+
+void CButton::SetDefaultButtontext()
+{
+	//TODO: set default font
+	m_Buttontext.setFillColor(sf::Color::Black);
+	m_Buttontext.setStyle(sf::Text::Style::Regular);
+	m_Buttontext.setCharacterSize(30);
+}
 
 
 //sets the button's position
@@ -47,18 +57,29 @@ void CButton::SetScale(float _x, float _y)
 	m_Buttontext.setCharacterSize(static_cast<int>(static_cast<float>(m_Buttontext.getCharacterSize())* _x));
 }
 
-//specifies the attributes of the buttontext
-void CButton::SetButtontextAttributes(sf::Font const &_font, int _charactersize, sf::Color const &_color, sf::Text::Style _style)
+
+void CButton::SetButtontextFont(sf::Font const &_font)
 {
 	m_Buttontext.setFont(_font);
-	m_Buttontext.setCharacterSize(_charactersize);
-	m_Buttontext.setFillColor(_color);
-
-	m_Buttontext.setStyle(_style);
-
-	m_Buttontext.setPosition(m_ButtonSprite.GetRect().left + (m_ButtonSprite.GetRect().width - m_Buttontext.getGlobalBounds().width) / 2, m_ButtonSprite.GetRect().top + (m_ButtonSprite.GetRect().height - m_Buttontext.getGlobalBounds().height) / 2);
 }
 
+
+void CButton::SetButtontextCharactersize(int _size)
+{
+	m_Buttontext.setCharacterSize(_size);
+}
+
+
+void CButton::SetButtontextColor(sf::Color const &_color)
+{
+	m_Buttontext.setFillColor(_color);
+}
+
+
+void CButton::SetButtontextStyle(sf::Text::Style _style)
+{
+	m_Buttontext.setStyle(_style);
+}
 
 //sets the buttonstring
 void CButton::SetButtonstring(std::string const &_buttonstring)

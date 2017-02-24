@@ -21,6 +21,8 @@ void NewGameMenu::Init(CGameEngine *_engine)
 
 	currentClass = 0;
 	currentWorldSize = 0;
+
+	startGame = false;
 }
 
 
@@ -70,7 +72,7 @@ void NewGameMenu::LoadClassDescriptions()
 
 		c.SetTextCharacterSize(descriptionID, 25);
 		c.SetTextFont(descriptionID, g_pFonts->f_plantc);
-		c.SetTextPos(descriptionID, 10, 250);
+		c.SetTextPos(descriptionID, 15, 250);
 	}
 }
 
@@ -78,10 +80,12 @@ void NewGameMenu::LoadClassDescriptions()
 void NewGameMenu::LoadButtons()
 {
 	buttons[StartGame].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Up, g_pStringContainer->m_Strings[String_start_game]);
-	buttons[StartGame].SetButtontextAttributes(g_pFonts->f_valken, 27, sf::Color::Black);
+	buttons[StartGame].SetButtontextFont(g_pFonts->f_valken);
+	buttons[StartGame].SetButtontextCharactersize(27);
 	
 	buttons[Return].Load(g_pTextures->t_buttonMainMenu, Buttontypes::Motion_Up, g_pStringContainer->m_Strings[String_return]);
-	buttons[Return].SetButtontextAttributes(g_pFonts->f_valken, 27, sf::Color::Black);
+	buttons[Return].SetButtontextFont(g_pFonts->f_valken);
+	buttons[Return].SetButtontextCharactersize(27);
 
 	buttons[ClassLeft].Load(g_pTextures->t_buttonLeft, Buttontypes::Up);
 	buttons[ClassRight].Load(g_pTextures->t_buttonRight, Buttontypes::Up);
@@ -151,6 +155,9 @@ void NewGameMenu::Render(double _normalizedTimestep)
 	RenderButtons();
 
 	m_pGameEngine->FlipWindow();
+
+	if(startGame)
+		m_pGameEngine->ChangeState(new Game());
 }
 
 
@@ -189,10 +196,12 @@ void NewGameMenu::RenderButtons()
 		worldSizePanel.ChangeString(0, g_pStringContainer->m_Strings[String_small_world + currentWorldSize]);
 	}
 
+
 	if (buttons[StartGame].Render(*m_pGameEngine))
 	{
-
+		startGame = true;
 	}
+
 
 	if (buttons[Return].Render(*m_pGameEngine))
 	{
@@ -202,55 +211,4 @@ void NewGameMenu::RenderButtons()
 
 
 
-
-
-
-//
-//int NewGameMenu::Run()
-//{
-//	//the loop
-//	while(is_running == true)
-//	{
-//		//Update and clear the Window
-//		g_pFramework->Update();
-//		g_pFramework->Clear();
-//
-//		//get the events
-//		g_pFramework->ProcessEvents();
-//		m_ButtonEventtype = 0;
-//
-//		//If an event happened, important for the buttons, save it (Left mouse up)
-//		if(g_pFramework->keyStates.leftMouseUp)
-//				m_ButtonEventtype = MOUSE_LEFT_UP;
-//		else if (g_pFramework->keyStates.f3)
-//		{
-//			m_class = TEST - 1;
-//
-//			is_running = false;
-//			return 2;
-//		}
-//
-//		
-//		m_GameName.HandleInput();
-//
-//		//Render the background
-//		m_pBackground->Render(g_pFramework->GetRenderWindow());
-//
-//		m_GameName.Show(g_pFramework->GetRenderWindow());
-//
-//		m_pClass[m_class]->Render(g_pFramework->GetRenderWindow());
-//		g_pFramework->GetRenderWindow()->draw(m_ClassTitle[m_class]);
-//
-//		m_pWorldSize.Render(g_pFramework->GetRenderWindow());
-//
-//
-//		//Render the buttons
-//		RenderButtons();
-//       
-//
-//		g_pFramework->Flip();
-//	}
-//
-//	return m_returnNumber;
-//}
 
