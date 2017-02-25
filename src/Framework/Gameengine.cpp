@@ -6,7 +6,9 @@ void CGameEngine::Init(std::string const &_name)
 {
 	m_Window.Init(_name);
 
-	m_popState = false;
+	nextGameState = NULL;
+
+	nextAction = action::hold;
 	m_running = true;
 }
 
@@ -15,6 +17,12 @@ void CGameEngine::Init(std::string const &_name)
 void CGameEngine::Quit()
 {
 	ClearStates();
+
+	if(nextGameState)
+		nextGameState->Cleanup();
+
+	SAFE_DELETE(nextGameState);
+
 	m_Window.Quit();
 }
 
@@ -27,6 +35,7 @@ void CGameEngine::Run()
 	//the game loop
 	while (m_running)
 	{
+
 		//update the timer and calculate the lag
 		g_pTimer->Update();
 		lag += static_cast<double>(g_pTimer->GetElapsedTime().asMicroseconds()) / 1000.0;
@@ -42,7 +51,8 @@ void CGameEngine::Run()
 		}
 
 		//renders
- 		m_pStates.back()->Render(lag / (double)MS_PER_UPDATE);
+		m_pStates.back()->Render(lag / (double)MS_PER_UPDATE);
+
 
 		//checks if the current state needs to be popped
 		CheckStates();
@@ -50,15 +60,38 @@ void CGameEngine::Run()
 }
 
 
+void CGameEngine::PushState(GameState * _state)
+{
+	nextGameState = _state;
+	nextAction = action::push;
+}
+
+
+void CGameEngine::PushStateImmediately(GameState * _state)
+{
+	_state->Init(this);
+	m_pStates.push_back(_state);
+}
+
+
+
+void CGameEngine::PopState()
+{
+	nextAction = action::pop;
+}
 
 
 void CGameEngine::ChangeState(GameState * _state)
 {
-	//Clear all states
-	ClearStates();
+	nextGameState = _state;
+	nextAction = action::change;
+}
 
-	//add the new state
-	PushState(_state);
+void CGameEngine::ChangeStateImmediately(GameState * _state)
+{
+	ClearStates();
+	_state->Init(this);
+	m_pStates.push_back(_state);
 }
 
 
@@ -79,29 +112,26 @@ void CGameEngine::ClearStates()
 
 
 
-void CGameEngine::PushState(GameState * _state)
-{
-	_state->Init(this);
-	m_pStates.push_back(_state);
-}
-
-
-
-
-void CGameEngine::PopState()
-{
-	m_popState = true;
-}
-
-
 void CGameEngine::CheckStates()
 {
-	//pop last state if needed
-	if (m_popState)
+	switch (nextAction)
 	{
+	case action::push:
+		PushStateImmediately(nextGameState);
+		break;
+
+	case action::pop:
 		m_pStates.back()->Cleanup();
 		SAFE_DELETE(m_pStates.back());
 		m_pStates.pop_back();
-		m_popState = false;
+		break;
+
+	case action::change:
+		ChangeStateImmediately(nextGameState);
+		break;
 	}
+	
+	nextGameState = NULL;
+	nextAction = action::hold;
+	
 }

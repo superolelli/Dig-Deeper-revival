@@ -23,8 +23,12 @@ public:
 	//changes the current state and deletes the whole stack
 	void ChangeState(GameState* _state);
 
+	void ChangeStateImmediately(GameState* _state);
+
 	//pushes a new state to the stack
 	void PushState(GameState* _state);
+
+	void PushStateImmediately(GameState* _state);
 
 	//pops the last state of the stack
 	void PopState();
@@ -64,7 +68,8 @@ private:
 
 	bool m_running;
 
-	bool m_popState;     //true if the last state needs to be popped
+	GameState *nextGameState;
+	enum class action {hold, push, pop, change} nextAction;
 
 	//clears all states
 	void ClearStates();

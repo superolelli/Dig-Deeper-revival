@@ -1,17 +1,14 @@
-﻿  NewGame.cpp
-f:\dig deeper revival\src\game\menus\newgame.cpp(36): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
-  Code wird generiert...
-  Kompilieren...
-  GameMenu.cpp
+﻿  InitialState.cpp
+  Gameengine.cpp
   Code wird generiert...
   Überspringen... (keine relevanten Änderungen gefunden)
   main.cpp
   Options.cpp
+  NewGame.cpp
   MainMenu.cpp
-  InitialState.cpp
+  GameMenu.cpp
   Game.cpp
   StringInput.cpp
   Button.cpp
-  Gameengine.cpp
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)
