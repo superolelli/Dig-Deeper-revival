@@ -5,6 +5,8 @@
 void Game::Init(CGameEngine * _engine)
 {
 	m_pGameEngine = _engine;
+
+	world.Init();
 }
 
 
@@ -34,6 +36,8 @@ void Game::Update()
 {
 	if(m_pGameEngine->GetKeystates(KeyID::Escape) == Keystates::Pressed)
 		m_pGameEngine->ChangeState(new CMainMenu());
+
+	world.Update();
 }
 
 
@@ -42,7 +46,7 @@ void Game::Render(double _normalizedTimestep)
 {
 	m_pGameEngine->ClearWindow(sf::Color::Black);
 
-
+	world.Render(m_pGameEngine->GetWindow(), _normalizedTimestep);
 
 	m_pGameEngine->FlipWindow();
 }

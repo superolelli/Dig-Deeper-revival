@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<placeables>
+
+  <!-- Default -->
+  <default
+      is_solid ="true"
+      is_visible ="true"
+      is_breakable ="true"
+      hardness ="1"
+      texture ="Data/Sprites/Objects/Blocks/no_texture.png"
+ ></default>
+
+ 
+  <!-- Dirt -->
+  <dirt 
+    ID ="1"
+    hardness ="2"
+    texture ="Data/Sprites/Objects/Blocks/dirt.png"
+ ></dirt>
+
+  <!-- Stone -->
+  <stone
+    ID ="2"
+    hardness ="5"
+    texture ="Data/Sprites/Objects/Blocks/stone.png"
+ ></stone>
+  
+</placeables>

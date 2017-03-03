@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
 #include "../../Framework/Patterns/singleton.hpp"
 
 #define g_pTextures CTextureManager::Get()
@@ -42,4 +44,6 @@ public:
 	sf::Texture t_newGameBuilder;
 	sf::Texture t_newGameWarrior;
 	sf::Texture t_newGameMage;
+
+	std::map<int, sf::Texture> t_placeables;
 };

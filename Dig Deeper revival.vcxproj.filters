@@ -120,6 +120,12 @@
     <ClCompile Include="src\Game\World.cpp">
       <Filter>Quelldateien\Game</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Placeable.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Resources\ObjectPropertiesManager.cpp">
+      <Filter>Quelldateien\Game\Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -199,6 +205,12 @@
     </ClInclude>
     <ClInclude Include="src\Game\World.hpp">
       <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Placeable.hpp">
+      <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Resources\ObjectPropertiesManager.hpp">
+      <Filter>Headerdateien\Game\Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

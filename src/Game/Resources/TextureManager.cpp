@@ -36,6 +36,26 @@ void CTextureManager::LoadTextures()
 	t_newGameBuilder.loadFromFile("Data/Sprites/NewGame/startClass_builder.png");
 	t_newGameWarrior.loadFromFile("Data/Sprites/NewGame/startClass_warrior.png");
 	t_newGameMage.loadFromFile("Data/Sprites/NewGame/startClass_mage.png");
+
+
+
+
+	//load placeable textures
+	using boost::property_tree::ptree;
+	using boost::property_tree::xml_parser::no_comments;
+	ptree pt;
+
+	read_xml("Data/Xml/Placeables.xml", pt, no_comments);
+
+	for (auto v : pt.get_child("placeables"))
+	{
+		sf::Texture newTexture;
+		newTexture.loadFromFile(v.second.get("<xmlattr>.texture", ""));
+
+		t_placeables[v.second.get("<xmlattr>.ID", 0)] = newTexture;
+	}
+
+	pt.clear();
 }
 
 
