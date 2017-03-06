@@ -45,5 +45,9 @@ public:
 	sf::Texture t_newGameWarrior;
 	sf::Texture t_newGameMage;
 
+
+	sf::Texture t_backgroundUnderground;
+	sf::Texture t_backgroundSky;
+
 	std::map<int, sf::Texture> t_placeables;
 };

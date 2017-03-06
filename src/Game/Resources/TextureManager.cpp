@@ -38,6 +38,8 @@ void CTextureManager::LoadTextures()
 	t_newGameMage.loadFromFile("Data/Sprites/NewGame/startClass_mage.png");
 
 
+	t_backgroundUnderground.loadFromFile("Data/Sprites/Background_game.png");
+	t_backgroundSky.loadFromFile("Data/Sprites/Background_sky.png");
 
 
 	//load placeable textures

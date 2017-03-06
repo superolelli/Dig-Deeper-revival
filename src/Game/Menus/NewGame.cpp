@@ -135,7 +135,49 @@ void NewGameMenu::HandleEvents()
 
 void NewGameMenu::Update()
 {
+	if (buttons[ClassLeft].Update(*m_pGameEngine))
+	{
+		currentClass--;
+		if (currentClass < 0)
+			currentClass = 3;
+	}
 
+	if (buttons[ClassRight].Update(*m_pGameEngine))
+	{
+		currentClass++;
+		if (currentClass > 3)
+			currentClass = 0;
+	}
+
+	if (buttons[WorldLeft].Update(*m_pGameEngine))
+	{
+		currentWorldSize--;
+		if (currentWorldSize < 0)
+			currentWorldSize = 2;
+
+		worldSizePanel.ChangeString(0, g_pStringContainer->m_Strings[String_small_world + currentWorldSize]);
+	}
+
+	if (buttons[WorldRight].Update(*m_pGameEngine))
+	{
+		currentWorldSize++;
+		if (currentWorldSize > 2)
+			currentWorldSize = 0;
+
+		worldSizePanel.ChangeString(0, g_pStringContainer->m_Strings[String_small_world + currentWorldSize]);
+	}
+
+
+	if (buttons[StartGame].Update(*m_pGameEngine))
+	{
+		startGame = true;
+	}
+
+
+	if (buttons[Return].Update(*m_pGameEngine))
+	{
+		m_pGameEngine->PopState();
+	}
 }
 
 void NewGameMenu::Render(double _normalizedTimestep)
@@ -164,49 +206,12 @@ void NewGameMenu::Render(double _normalizedTimestep)
 //renders all buttons
 void NewGameMenu::RenderButtons()
 {
-	if (buttons[ClassLeft].Render(*m_pGameEngine))
-	{
-		currentClass--;
-		if (currentClass < 0)
-			currentClass = 3;
-	}
-
-	if (buttons[ClassRight].Render(*m_pGameEngine))
-	{
-		currentClass++;
-		if (currentClass > 3)
-			currentClass = 0;
-	}
-
-	if (buttons[WorldLeft].Render(*m_pGameEngine))
-	{
-		currentWorldSize--;
-		if (currentWorldSize < 0)
-			currentWorldSize = 2;
-
-		worldSizePanel.ChangeString(0, g_pStringContainer->m_Strings[String_small_world + currentWorldSize]);
-	}
-
-	if (buttons[WorldRight].Render(*m_pGameEngine))
-	{
-		currentWorldSize++;
-		if (currentWorldSize > 2)
-			currentWorldSize = 0;
-
-		worldSizePanel.ChangeString(0, g_pStringContainer->m_Strings[String_small_world + currentWorldSize]);
-	}
-
-
-	if (buttons[StartGame].Render(*m_pGameEngine))
-	{
-		startGame = true;
-	}
-
-
-	if (buttons[Return].Render(*m_pGameEngine))
-	{
-		m_pGameEngine->PopState();
-	}
+	buttons[ClassLeft].Render(*m_pGameEngine);
+	buttons[ClassRight].Render(*m_pGameEngine);
+	buttons[WorldLeft].Render(*m_pGameEngine);
+	buttons[WorldRight].Render(*m_pGameEngine);
+	buttons[StartGame].Render(*m_pGameEngine);
+	buttons[Return].Render(*m_pGameEngine);
 }
 
 

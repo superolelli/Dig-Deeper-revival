@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Placeable.hpp"
+#include "Background.hpp"
 
 
 class World
@@ -14,5 +15,5 @@ public:
 
 private:
 
-	Placeable placeable;
+	Background background;
 };

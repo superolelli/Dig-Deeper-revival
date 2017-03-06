@@ -57,7 +57,12 @@ void COptions::HandleEvents()
 
 void COptions::Update()
 {
+	if (m_Buttons[Return].Update(*m_pGameEngine) == true)
+		m_pGameEngine->PopState();
 
+	m_Buttons[Settings].Update(*m_pGameEngine);
+	m_Buttons[Upgrades].Update(*m_pGameEngine);
+	m_Buttons[Achievements].Update(*m_pGameEngine);
 }
 
 
@@ -79,8 +84,5 @@ void COptions::RenderButtons()
 	m_Buttons[Settings].Render(*m_pGameEngine);
 	m_Buttons[Upgrades].Render(*m_pGameEngine);
 	m_Buttons[Achievements].Render(*m_pGameEngine);
-
-	//if the quit button was pressed: quit the game
-	if (m_Buttons[Return].Render(*m_pGameEngine) == true)
-		m_pGameEngine->PopState();
+	m_Buttons[Return].Render(*m_pGameEngine);
 }

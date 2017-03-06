@@ -58,7 +58,15 @@ void CGameMenu::HandleEvents()
 
 void CGameMenu::Update()
 {
+	if (m_Buttons[NewGame].Update(*m_pGameEngine))
+	{
+		m_pGameEngine->PushState(new NewGameMenu());
+	}
 
+	m_Buttons[LoadGame].Update(*m_pGameEngine);
+
+	if (m_Buttons[Return].Update(*m_pGameEngine))
+		m_pGameEngine->PopState();
 }
 
 void CGameMenu::Render(double _normalizedTimestep)
@@ -76,15 +84,7 @@ void CGameMenu::Render(double _normalizedTimestep)
 //renders all buttons
 void CGameMenu::RenderButtons()
 {
-	if (m_Buttons[NewGame].Render(*m_pGameEngine))
-	{
-		m_pGameEngine->PushState(new NewGameMenu());
-	}
-
+	m_Buttons[NewGame].Render(*m_pGameEngine);
 	m_Buttons[LoadGame].Render(*m_pGameEngine);
-
-
-	//if the quit button was pressed: quit the game
-	if (m_Buttons[Return].Render(*m_pGameEngine))
-		m_pGameEngine->PopState();
+	m_Buttons[Return].Render(*m_pGameEngine);
 }

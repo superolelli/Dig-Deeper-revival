@@ -60,7 +60,18 @@ void CMainMenu::HandleEvents()
 
 void CMainMenu::Update()
 {
+	if (m_Buttons[Play].Update(*m_pGameEngine))
+		m_pGameEngine->PushState(new CGameMenu());
 
+	//if the options button was pressed: open the options page
+	if (m_Buttons[Options].Update(*m_pGameEngine))
+		m_pGameEngine->PushState(new COptions());
+
+	m_Buttons[Highscore].Update(*m_pGameEngine);
+
+	//if the quit button was pressed: quit the game
+	if (m_Buttons[Quit].Update(*m_pGameEngine))
+		m_pGameEngine->StopEngine();
 }
 
 void CMainMenu::Render(double _normalizedTimestep)
@@ -78,16 +89,8 @@ void CMainMenu::Render(double _normalizedTimestep)
 //renders all buttons
 void CMainMenu::RenderButtons()
 {
-	if (m_Buttons[Play].Render(*m_pGameEngine))
-		m_pGameEngine->PushState(new CGameMenu());
-
-	//if the options button was pressed: open the options page
-	if (m_Buttons[Options].Render(*m_pGameEngine))
-		m_pGameEngine->PushState(new COptions());
-
+	m_Buttons[Play].Render(*m_pGameEngine);
+	m_Buttons[Options].Render(*m_pGameEngine);
 	m_Buttons[Highscore].Render(*m_pGameEngine);
-
-	//if the quit button was pressed: quit the game
-	if (m_Buttons[Quit].Render(*m_pGameEngine))
-		m_pGameEngine->StopEngine();
+	m_Buttons[Quit].Render(*m_pGameEngine);
 }

@@ -24,6 +24,8 @@ void CButton::Load(sf::Texture const &_texture, Buttontypes _type, std::string c
 	m_ButtonSprite.SetPos(0, 0);
 	m_Buttontype = _type;
 
+	nextFrame = 0.0f;
+
 	//sets the buttonstring
 	m_Buttonstring = _str;
 	m_Buttontext.setString(m_Buttonstring);
@@ -91,95 +93,91 @@ void CButton::SetButtonstring(std::string const &_buttonstring)
 }
 
 
-bool CButton::Render(CGameEngine &_engine)
+
+bool CButton::Update(CGameEngine &_engine)
 {
-	 //if the mouse is at the button
-	if(m_ButtonSprite.GetRect().contains(_engine.GetMousePos()))
+	nextFrame = 0.0f;
+
+	//if the mouse is at the button
+	if (m_ButtonSprite.GetRect().contains(_engine.GetMousePos()))
 	{
 		//If the left mouse button was released
-		if(_engine.GetButtonstates(ButtonID::Left) == Released)
+		if (_engine.GetButtonstates(ButtonID::Left) == Released)
 		{
 			//render the right button frame
-			switch(m_Buttontype)
+			switch (m_Buttontype)
 			{
 			case Buttontypes::Up:
-				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
-				RenderButtontext(_engine);
+				nextFrame = 1.0f;
 				return true;
 				break;
 
 			case Buttontypes::Down:
-				m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
-				RenderButtontext(_engine);
+				nextFrame = 0.0f;
 				return false;
 				break;
 
 			case Buttontypes::Motion_Up:
-				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
-				RenderButtontext(_engine);
+				nextFrame = 2.0f;
 				return true;
 				break;
 
 			case Buttontypes::Motion_Down:
-				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
-				RenderButtontext(_engine);
+				nextFrame = 1.0;
 				return false;
 				break;
 			}
 		}
 		//if the left mouse button was pressed or is held
-		else if(_engine.GetButtonstates(ButtonID::Left) == Pressed)
+		else if (_engine.GetButtonstates(ButtonID::Left) == Pressed)
 		{
 			//Render the right button frame
-			switch(m_Buttontype)
+			switch (m_Buttontype)
 			{
 			case Buttontypes::Up:
-				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
-				RenderButtontext(_engine);
+				nextFrame = 1.0f;
 				return false;
 				break;
 
 			case Buttontypes::Down:
-				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
-				RenderButtontext(_engine);
+				nextFrame = 1.0f;
 				return true;
 				break;
 
 			case Buttontypes::Motion_Up:
-				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
-				RenderButtontext(_engine);
+				nextFrame = 2.0f;
 				return false;
 				break;
 
 			case Buttontypes::Motion_Down:
-				m_ButtonSprite.Render(_engine.GetWindow(), 2.0f);
-				RenderButtontext(_engine);
+				nextFrame = 2.0f;
 				return true;
 				break;
 			}
 		}
-		else 
+		else
 		{
-			if(m_Buttontype == Buttontypes::Up || m_Buttontype == Buttontypes::Down)
+			if (m_Buttontype == Buttontypes::Up || m_Buttontype == Buttontypes::Down)
 			{
-				m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
+				nextFrame = 0.0f;
 			}
 			else
-				m_ButtonSprite.Render(_engine.GetWindow(), 1.0f);
-
-			RenderButtontext(_engine);
+				nextFrame = 1.0f;
 
 			return false;
 		}
 	}
 
-
-	m_ButtonSprite.Render(_engine.GetWindow(), 0.0f);
-
-	//draws the text
-	RenderButtontext(_engine);
-
 	return false;
+}
+
+
+
+
+void CButton::Render(CGameEngine &_engine)
+{
+	m_ButtonSprite.Render(_engine.GetWindow(), nextFrame);
+	RenderButtontext(_engine);
 }
 
 

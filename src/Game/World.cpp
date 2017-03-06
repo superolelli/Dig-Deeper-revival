@@ -4,7 +4,7 @@
 
 void World::Init()
 {
-	placeable.Init(1);
+	background.Init();
 }
 
 
@@ -16,11 +16,11 @@ void World::GenerateWorld()
 
 void World::Update()
 {
-	placeable.SetPos(400, 300);
+	background.Update(0, 0);
 }
 
 
 void World::Render(sf::RenderTarget &_target, double _normalizedTimestep)
 {
-	placeable.Render(_target);
+	background.Render(0, 0, _target);
 }
