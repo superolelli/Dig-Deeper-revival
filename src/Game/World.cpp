@@ -16,7 +16,7 @@ void World::GenerateWorld()
 
 void World::Update()
 {
-	background.Update(0, 0);
+	background.Update(sf::IntRect(0, 0, 1920, 1080));
 }
 
 

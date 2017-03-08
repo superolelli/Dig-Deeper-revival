@@ -8,7 +8,7 @@ class Background
 public:
 
 	void Init();
-	void Update(int viewX, int viewY);
+	void Update(sf::IntRect &view);
 	void Render(int viewX, int viewY, sf::RenderTarget &target);
 
 private:
@@ -16,14 +16,15 @@ private:
 
 	const int SKY_HEIGHT = 500;
 	
-	int nextX1, nextY1, 
-		nextX2, nextY2, 
-		nextX3, nextY3, 
-		nextX4, nextY4;
+	int nextX[4];
+	int nextY[4];
 
-	sf::IntRect offset1, offset2, offset3, offset4;
+	sf::IntRect offset[4];
 
 	CSprite undergroundSprite;
 	CSprite skySprite;
+
+	void RenderUndergroundSprite(int index, sf::RenderTarget &target);
+	void RenderSkySprite(int index, sf::RenderTarget &target);
 
 };

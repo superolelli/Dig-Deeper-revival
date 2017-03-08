@@ -10,35 +10,59 @@ void Background::Init()
 
 
 
-void Background::Update(int viewX, int viewY)
+void Background::Update(sf::IntRect &view)
 {
-	if (viewY < SKY_HEIGHT)
+	int spriteHeight, spriteWidth;
+
+	if (view.top < SKY_HEIGHT)
 	{
-		nextX1 = viewX - (viewX % skySprite.GetRect().width);
-		nextY1 = viewY - (viewY % skySprite.GetRect().height);
-
-		nextX2 = nextX1 + skySprite.GetRect().width;
-		nextY2 = nextY1;
-
-		nextX3 = nextX1;
-		nextY3 = nextY1 + skySprite.GetRect().height;
+		spriteWidth = skySprite.GetRect().width;
+		spriteHeight = skySprite.GetRect().height;
 	}
 	else
 	{
-		nextX1 = viewX - (viewX % undergroundSprite.GetRect().width);
-		nextY1 = viewY - (viewY % undergroundSprite.GetRect().height);
-
-		nextX2 = nextX1 + undergroundSprite.GetRect().width;
-		nextY2 = nextY1;
-
-		nextX3 = nextX1;
-		nextY3 = nextY1 + undergroundSprite.GetRect().height;
+		spriteWidth = undergroundSprite.GetRect().width;
+		spriteHeight = undergroundSprite.GetRect().height;
 	}
 
 
+	nextX[0] = view.left - (view.left % spriteWidth);
+	nextY[0] = view.top - (view.top % spriteHeight);
 
-	nextX4 = nextX2;
-	nextY4 = nextY3;
+	nextX[1] = nextX[0] + spriteWidth;
+	nextY[1] = nextY[0];
+
+	nextX[2] = nextX[0];
+	nextY[2] = nextY[0] + spriteHeight;
+	
+	nextX[3] = nextX[1];
+	nextY[3] = nextY[2];
+
+	offset[0].left = view.left - nextX[0];
+	offset[0].width = spriteWidth - offset[0].left;
+	offset[0].top = view.top - nextY[0];
+	offset[0].height = spriteHeight - offset[0].top;
+
+	offset[1].left = 0;
+	offset[1].top = offset[0].top;
+	offset[1].width = view.width - offset[0].width;
+	offset[1].height = offset[0].height;
+
+	offset[2].left = offset[0].left;
+	offset[2].top = 0;
+	offset[2].width = offset[0].width;
+	offset[2].height = view.height - offset[0].height;
+
+	offset[3].left = offset[1].left;
+	offset[3].top = offset[2].top;
+	offset[3].width = offset[1].width;
+	offset[3].height = offset[2].height;
+
+
+	nextX[0] = view.left;
+	nextY[0] = view.top;
+	nextY[1] = nextY[0];
+	nextX[2] = nextX[0];
 }
 
 
@@ -47,24 +71,38 @@ void Background::Render(int viewX, int viewY, sf::RenderTarget &target)
 {
 	if (viewY < SKY_HEIGHT)
 	{
-		skySprite.SetPos(nextX1, nextY1);
-		skySprite.Render(target);
-
-		skySprite.SetPos(nextX2, nextY2);
-		skySprite.Render(target);
+		RenderSkySprite(0, target);
+		RenderSkySprite(1, target);
 	}
 	else
 	{
-		undergroundSprite.SetPos(nextX1, nextY1);
-		undergroundSprite.Render(target);
-
-		undergroundSprite.SetPos(nextX2, nextY2);
-		undergroundSprite.Render(target);
+		RenderUndergroundSprite(0, target);
+		RenderUndergroundSprite(1, target);
 	}
 
-	undergroundSprite.SetPos(nextX3, nextY3);
-	undergroundSprite.Render(target);
 
-	undergroundSprite.SetPos(nextX4, nextY4);
+	RenderUndergroundSprite(2, target);
+	RenderUndergroundSprite(3, target);
+
+	undergroundSprite.SetTextureRectToDefault();
+	skySprite.SetTextureRectToDefault();
+}
+
+
+
+
+void Background::RenderUndergroundSprite(int index, sf::RenderTarget &target)
+{
+	undergroundSprite.SetTextureRect(offset[index]);
+	undergroundSprite.SetPos(nextX[index], nextY[index]);
 	undergroundSprite.Render(target);
+}
+
+
+
+void Background::RenderSkySprite(int index, sf::RenderTarget &target)
+{
+	skySprite.SetTextureRect(offset[index]);
+	skySprite.SetPos(nextX[index], nextY[index]);
+	skySprite.Render(target);
 }
