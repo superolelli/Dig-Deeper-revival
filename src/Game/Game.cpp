@@ -7,6 +7,7 @@ void Game::Init(CGameEngine * _engine)
 	m_pGameEngine = _engine;
 
 	world.Init();
+	world.GenerateWorld(50, 50);
 }
 
 

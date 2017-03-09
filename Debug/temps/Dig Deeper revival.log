@@ -1,3 +1,13 @@
-﻿  Background.cpp
+﻿  World.cpp
+  Game.cpp
+  Code wird generiert...
+  Kompilieren...
+  main.cpp
+  NewGame.cpp
+f:\dig deeper revival\src\game\menus\newgame.cpp(36): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
+  MainMenu.cpp
+  GameMenu.cpp
+  InitialState.cpp
+  Code wird generiert...
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)
