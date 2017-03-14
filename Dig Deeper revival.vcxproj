@@ -130,6 +130,7 @@
     <ClCompile Include="src\Game\Menus\NewGame.cpp" />
     <ClCompile Include="src\Game\Menus\Options.cpp" />
     <ClCompile Include="src\Game\Placeable.cpp" />
+    <ClCompile Include="src\Game\Player.cpp" />
     <ClCompile Include="src\Game\Resources\FontManager.cpp" />
     <ClCompile Include="src\Game\Resources\ObjectPropertiesManager.cpp" />
     <ClCompile Include="src\Game\Resources\SoundManager.cpp" />
@@ -260,6 +261,7 @@
     <ClInclude Include="src\Game\Menus\NewGame.hpp" />
     <ClInclude Include="src\Game\Menus\Options.hpp" />
     <ClInclude Include="src\Game\Placeable.hpp" />
+    <ClInclude Include="src\Game\Player.hpp" />
     <ClInclude Include="src\Game\Resources\FontManager.hpp" />
     <ClInclude Include="src\Game\Resources\ObjectPropertiesManager.hpp" />
     <ClInclude Include="src\Game\Resources\Resources.hpp" />

@@ -3,6 +3,7 @@
 #include "../Framework/Gamestate.hpp"
 #include "Menus\MainMenu.hpp"
 #include "World.hpp"
+#include "Player.hpp"
 
 
 class Game : public GameState
@@ -22,4 +23,5 @@ public:
 private:
 
 	World world;
+	Player player;
 };

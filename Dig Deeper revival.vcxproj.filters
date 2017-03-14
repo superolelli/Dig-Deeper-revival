@@ -417,6 +417,9 @@
     <ClCompile Include="src\Framework\Animations\sfml_implementation\tinyxmlspriterfiledocumentwrapper.cpp">
       <Filter>Quelldateien\Framework\Animations</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Player.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -805,6 +808,9 @@
     </ClInclude>
     <ClInclude Include="src\Framework\Animations\sfml_implementation\tinyxmlspriterfileelementwrapper.h">
       <Filter>Headerdateien\Framework\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Player.hpp">
+      <Filter>Headerdateien\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,11 +8,15 @@ void Game::Init(CGameEngine * _engine)
 
 	world.Init();
 	world.GenerateWorld(50, 50);
+
+	player.Init(m_pGameEngine->GetWindow());
 }
 
 
 void Game::Cleanup()
 {
+	player.Quit();
+
 	m_pGameEngine = nullptr;
 }
 
@@ -39,6 +43,7 @@ void Game::Update()
 		m_pGameEngine->ChangeState(new CMainMenu());
 
 	world.Update();
+	player.Update();
 }
 
 
@@ -48,6 +53,8 @@ void Game::Render(double _normalizedTimestep)
 	m_pGameEngine->ClearWindow(sf::Color::Black);
 
 	world.Render(m_pGameEngine->GetWindow(), _normalizedTimestep);
+
+	player.Render(_normalizedTimestep);
 
 	m_pGameEngine->FlipWindow();
 }
