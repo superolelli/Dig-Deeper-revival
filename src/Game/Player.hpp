@@ -21,7 +21,8 @@ public:
 
 private:
 	SpriterEngine::SpriterModel *model;
-	SpriterEngine::EntityInstance *instance;
+	SpriterEngine::EntityInstance *body;
+	SpriterEngine::EntityInstance * arm;
 
 
 };
