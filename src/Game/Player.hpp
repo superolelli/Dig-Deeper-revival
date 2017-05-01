@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../Framework/Gamestate.hpp"
+
 #include "../Framework/Makros.hpp"
 
 #include "../Framework/Animations/sfml_implementation/exampleobjectfactory.h"
@@ -14,15 +16,23 @@ class Player
 {
 public:
 
-	void Init(sf::RenderWindow &window);
+	void Init(CGameEngine *_engine);
 	void Update();
 	void Render(double timeElapsed);
 	void Quit();
 
 private:
+	CGameEngine *gameEngine;
+
 	SpriterEngine::SpriterModel *model;
 	SpriterEngine::EntityInstance *body;
 	SpriterEngine::EntityInstance * arm;
+
+	int xVelocity;
+	int yVelocity;
+
+
+	void CheckMovement();
 
 
 };

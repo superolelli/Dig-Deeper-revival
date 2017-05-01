@@ -9,7 +9,7 @@ void Game::Init(CGameEngine * _engine)
 	world.Init();
 	world.GenerateWorld(50, 50);
 
-	player.Init(m_pGameEngine->GetWindow());
+	player.Init(m_pGameEngine);
 }
 
 
