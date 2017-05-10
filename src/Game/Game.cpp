@@ -10,12 +10,17 @@ void Game::Init(CGameEngine * _engine)
 	world.GenerateWorld(50, 50);
 
 	player.Init(m_pGameEngine);
+
+	view.reset(sf::FloatRect(0, 0, (float)_engine->GetWindowSize().x, (float)_engine->GetWindowSize().y));
+	SetViewForPlayer();
 }
 
 
 void Game::Cleanup()
 {
 	player.Quit();
+
+	SetViewForGUI();
 
 	m_pGameEngine = nullptr;
 }
@@ -44,13 +49,23 @@ void Game::Update()
 
 	world.Update();
 	player.Update();
+
+	UpdateView();
 }
 
+
+
+void Game::UpdateView()
+{
+
+}
 
 
 void Game::Render(double _normalizedTimestep)
 {
 	m_pGameEngine->ClearWindow(sf::Color::Black);
+
+	SetViewForPlayer();
 
 	world.Render(m_pGameEngine->GetWindow(), _normalizedTimestep);
 
@@ -58,3 +73,4 @@ void Game::Render(double _normalizedTimestep)
 
 	m_pGameEngine->FlipWindow();
 }
+

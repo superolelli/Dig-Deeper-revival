@@ -28,6 +28,7 @@ private:
 	SpriterEngine::EntityInstance *body;
 	SpriterEngine::EntityInstance * arm;
 
+
 	int xVelocity;
 	int yVelocity;
 
