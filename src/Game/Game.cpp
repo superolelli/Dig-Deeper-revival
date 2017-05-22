@@ -47,7 +47,14 @@ void Game::Update()
 	if(m_pGameEngine->GetKeystates(KeyID::Escape) == Keystates::Pressed)
 		m_pGameEngine->ChangeState(new CMainMenu());
 
-	world.Update();
+	sf::IntRect vRect;
+	vRect.left = view.getCenter().x - view.getSize().x / 2;
+	vRect.top = view.getCenter().y - view.getSize().y / 2;
+	vRect.width = view.getSize().x;
+	vRect.height = view.getSize().y;
+		
+	world.Update(vRect);
+
 	player.Update();
 
 	UpdateView();
@@ -57,7 +64,22 @@ void Game::Update()
 
 void Game::UpdateView()
 {
+	sf::Vector2f playerCenter;
 
+	playerCenter.x = player.GetRect().left + player.GetRect().width / 2;
+	playerCenter.y = player.GetRect().top + player.GetRect().height / 2;
+
+	//check for world bounds
+	if (playerCenter.x < view.getSize().x / 2)
+		playerCenter.x = view.getSize().x / 2;
+	if (playerCenter.x > world.GetDimensions().x * 100 - view.getSize().x / 2)
+		playerCenter.x = world.GetDimensions().x * 100 - view.getSize().x / 2;
+	if (playerCenter.y < view.getSize().y / 2)
+		playerCenter.y = view.getSize().y / 2;
+	if (playerCenter.y > world.GetDimensions().y * 100 - view.getSize().y / 2)
+		playerCenter.y = world.GetDimensions().y * 100 - view.getSize().y / 2;
+
+	view.setCenter(playerCenter);
 }
 
 

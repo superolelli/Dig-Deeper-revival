@@ -26,8 +26,8 @@ private:
 	Player player;
 	sf::View view;
 
-	void SetViewForGUI() { m_pGameEngine->GetWindow().setView(view); }
-	void SetViewForPlayer() { m_pGameEngine->GetWindow().setView(m_pGameEngine->GetWindow().getDefaultView()); }
+	void SetViewForGUI() { m_pGameEngine->GetWindow().setView(m_pGameEngine->GetWindow().getDefaultView()); }
+	void SetViewForPlayer() { m_pGameEngine->GetWindow().setView(view); }
 
 	void UpdateView();
 };

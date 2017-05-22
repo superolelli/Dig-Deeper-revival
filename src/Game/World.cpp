@@ -42,9 +42,9 @@ void World::SetWorldSize(int x, int y)
 }
 
 
-void World::Update()
+void World::Update(const sf::IntRect &view)
 {
-	background.Update(sf::IntRect(0, 0, 1920, 1080));
+	background.Update(view);
 }
 
 

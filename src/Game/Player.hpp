@@ -21,6 +21,8 @@ public:
 	void Render(double timeElapsed);
 	void Quit();
 
+	const sf::FloatRect &GetRect() { return playerRect; }
+
 private:
 	CGameEngine *gameEngine;
 
@@ -28,12 +30,14 @@ private:
 	SpriterEngine::EntityInstance *body;
 	SpriterEngine::EntityInstance * arm;
 
+	sf::FloatRect playerRect;
 
 	int xVelocity;
 	int yVelocity;
 
-
 	void CheckMovement();
+
+	void LoadPlayerModel();
 
 
 };

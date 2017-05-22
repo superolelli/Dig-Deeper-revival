@@ -8,7 +8,7 @@ class Background
 public:
 
 	void Init();
-	void Update(sf::IntRect &view);
+	void Update(const sf::IntRect &view);
 	void Render(int viewX, int viewY, sf::RenderTarget &target);
 
 private:

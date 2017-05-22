@@ -8,6 +8,23 @@ void Player::Init(CGameEngine *_engine)
 
 	SpriterEngine::Settings::setErrorFunction(SpriterEngine::Settings::simpleError);
 
+	LoadPlayerModel();
+
+	SpriterEngine::UniversalObjectInterface* hitbox = body->getObjectInstance("hitbox");
+
+	playerRect.width = hitbox->getSize().x;
+	playerRect.height = hitbox->getSize().y;
+	playerRect.left = hitbox->getPosition().x;
+	playerRect.top = hitbox->getPosition().y;
+
+	xVelocity = 0;
+	yVelocity = 0;
+}
+
+
+
+void Player::LoadPlayerModel()
+{
 	model = new SpriterEngine::SpriterModel("./Data/Dwarf/dwarf.scml", new SpriterEngine::ExampleFileFactory(&gameEngine->GetWindow()), new SpriterEngine::ExampleObjectFactory(&gameEngine->GetWindow()));
 	body = model->getNewEntityInstance("body");
 	arm = model->getNewEntityInstance("arm");
@@ -24,9 +41,6 @@ void Player::Init(CGameEngine *_engine)
 
 	arm->setScale(SpriterEngine::point(1, 1));
 	arm->setPosition(SpriterEngine::point(armpoint->getPosition()));
-
-	xVelocity = 0;
-	yVelocity = 0;
 }
 
 
@@ -46,6 +60,8 @@ void Player::Update()
 
 	body->setPosition(SpriterEngine::point(body->getPosition().x + xVelocity, body->getPosition().y));
 	arm->setPosition(SpriterEngine::point(arm->getPosition().x + xVelocity, arm->getPosition().y));
+
+	playerRect.left += xVelocity;
 }
 
 
@@ -54,7 +70,8 @@ void Player::CheckMovement()
 {
 	xVelocity = 0;
 
-	if (gameEngine->GetMousePos().x < body->getPosition().x)
+
+	if (gameEngine->GetMousePos().x < GetRect().left + GetRect().width/2)
 	{
 		body->setScale(SpriterEngine::point(-1, 1));
 		arm->setScale(SpriterEngine::point(-1, 1));
@@ -70,6 +87,8 @@ void Player::CheckMovement()
 
 	if (gameEngine->GetKeystates(KeyID::D) == Keystates::Held)
 		xVelocity = 2;
+
+	std::cout << gameEngine->GetMousePos().x << ", " << GetRect().left << std::endl;
 }
 
 

@@ -10,7 +10,7 @@ void Background::Init()
 
 
 
-void Background::Update(sf::IntRect &view)
+void Background::Update(const sf::IntRect &view)
 {
 	int spriteHeight, spriteWidth;
 

@@ -10,8 +10,10 @@ public:
 
 	void Init();
 	void GenerateWorld(int width, int height);
-	void Update();
+	void Update(const sf::IntRect &view);
 	void Render(sf::RenderTarget &_target, double _normalizedTimestep);
+
+	const sf::Vector2i &GetDimensions() { return sf::Vector2i{ worldWidth, worldHeight }; }
 
 private:
 

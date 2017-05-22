@@ -48,7 +48,8 @@ void CWindow::ProcessEvents()
 	ResetKeyStates();
 
 	//gets the current mouse position
-	m_mousePosition = sf::Mouse::getPosition();
+	m_mousePosition = sf::Mouse::getPosition(*m_pWindow);
+	m_mousePosition = (sf::Vector2i)m_pWindow->mapPixelToCoords(m_mousePosition);
 
 	//sets all keystates
 	while (m_pWindow->pollEvent(event))
