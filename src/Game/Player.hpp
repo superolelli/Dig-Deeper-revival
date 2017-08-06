@@ -37,6 +37,8 @@ private:
 
 	void CheckMovement();
 
+	void ExtrapolationUpdate(double normalizedTimestep);
+
 	void LoadPlayerModel();
 
 

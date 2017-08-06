@@ -1,3 +1,15 @@
-﻿  Window.cpp
+﻿  Player.cpp
+f:\dig deeper revival\src\game\player.cpp(15): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(16): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(17): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(18): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
+  Code wird generiert...
+  Überspringen... (keine relevanten Änderungen gefunden)
+  main.cpp
+  NewGame.cpp
+  MainMenu.cpp
+  GameMenu.cpp
+  InitialState.cpp
+  Game.cpp
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)

@@ -58,10 +58,10 @@ void Player::Update()
 {
 	CheckMovement();
 
-	body->setPosition(SpriterEngine::point(body->getPosition().x + xVelocity, body->getPosition().y));
-	arm->setPosition(SpriterEngine::point(arm->getPosition().x + xVelocity, arm->getPosition().y));
-
 	playerRect.left += xVelocity;
+
+	body->setPosition(SpriterEngine::point(playerRect.left, body->getPosition().y));
+	arm->setPosition(SpriterEngine::point(playerRect.left, arm->getPosition().y));
 }
 
 
@@ -69,6 +69,7 @@ void Player::Update()
 void Player::CheckMovement()
 {
 	xVelocity = 0;
+	yVelocity = 0;
 
 
 	if (gameEngine->GetMousePos().x < GetRect().left + GetRect().width/2)
@@ -87,15 +88,13 @@ void Player::CheckMovement()
 
 	if (gameEngine->GetKeystates(KeyID::D) == Keystates::Held)
 		xVelocity = 2;
-
-	std::cout << gameEngine->GetMousePos().x << ", " << GetRect().left << std::endl;
 }
-
-
 
 
 void Player::Render(double timeElapsed)
 {
+	ExtrapolationUpdate(timeElapsed);
+
 	if (xVelocity != 0)
 	{
 		body->setCurrentAnimation("walk");
@@ -106,11 +105,19 @@ void Player::Render(double timeElapsed)
 		body->setCurrentAnimation("idle");
 		arm->setCurrentAnimation("idle");
 	}
-
-
-	body->setTimeElapsed(timeElapsed * abs(xVelocity) * 18);
+	
+	body->setTimeElapsed( abs(xVelocity) * 8);
 	body->render();
 
-	arm->setTimeElapsed(timeElapsed * abs(xVelocity) * 18);
+	arm->setTimeElapsed( abs(xVelocity) * 8);
 	arm->render();
+}
+
+
+
+
+void Player::ExtrapolationUpdate(double normalizedTimestep)
+{
+	body->setPosition(SpriterEngine::point(playerRect.left + round(xVelocity * normalizedTimestep), body->getPosition().y));
+	arm->setPosition(SpriterEngine::point(playerRect.left + round(xVelocity * normalizedTimestep), arm->getPosition().y));
 }

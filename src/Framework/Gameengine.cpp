@@ -40,19 +40,18 @@ void CGameEngine::Run()
 		g_pTimer->Update();
 		lag += static_cast<double>(g_pTimer->GetElapsedTime().asMicroseconds()) / 1000.0;
 
+		//process events
+		m_pStates.back()->HandleEvents();
+
 		//updates
 		while (lag >= MS_PER_UPDATE)
 		{
-			//process events
-			m_pStates.back()->HandleEvents();
-
 			m_pStates.back()->Update();
 			lag -= MS_PER_UPDATE;
 		}
 
 		//renders
 		m_pStates.back()->Render(lag / (double)MS_PER_UPDATE);
-
 
 		//checks if the current state needs to be popped
 		CheckStates();
@@ -131,7 +130,7 @@ void CGameEngine::CheckStates()
 		break;
 	}
 	
-	nextGameState = NULL;
+	nextGameState = nullptr;
 	nextAction = action::hold;
 	
 }
