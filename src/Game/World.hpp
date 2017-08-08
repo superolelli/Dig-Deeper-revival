@@ -15,6 +15,8 @@ public:
 
 	const sf::Vector2i &GetDimensions() { return sf::Vector2i{ worldWidth, worldHeight }; }
 
+	friend class CollisionDetector;
+
 private:
 
 	Background background;

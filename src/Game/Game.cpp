@@ -9,7 +9,9 @@ void Game::Init(CGameEngine * _engine)
 	world.Init();
 	world.GenerateWorld(50, 50);
 
-	player.Init(m_pGameEngine);
+	collisionDetector.Init(&world);
+
+	player.Init(m_pGameEngine, &collisionDetector);
 
 	view.reset(sf::FloatRect(0, 0, (float)_engine->GetWindowSize().x, (float)_engine->GetWindowSize().y));
 	SetViewForPlayer();
@@ -66,8 +68,8 @@ void Game::UpdateView()
 {
 	sf::Vector2f playerCenter;
 
-	playerCenter.x = player.GetRect().left + player.GetRect().width / 2;
-	playerCenter.y = player.GetRect().top + player.GetRect().height / 2;
+	playerCenter.x = (float)(player.GetExtrapolatedPos().x) + player.GetRect().width / 2;
+	playerCenter.y = (float)(player.GetExtrapolatedPos().y) + player.GetRect().height / 2;
 
 	//check for world bounds
 	if (playerCenter.x < view.getSize().x / 2)
@@ -89,10 +91,19 @@ void Game::Render(double _normalizedTimestep)
 
 	SetViewForPlayer();
 
+	ExtrapolationUpdate(_normalizedTimestep);
+
 	world.Render(m_pGameEngine->GetWindow(), _normalizedTimestep);
 
-	player.Render(_normalizedTimestep);
+	player.Render(g_pTimer->GetElapsedTime().asMilliseconds());
 
 	m_pGameEngine->FlipWindow();
+}
+
+
+void Game::ExtrapolationUpdate(double normalizedTimestep)
+{
+	player.ExtrapolationUpdate(normalizedTimestep);
+	UpdateView();
 }
 

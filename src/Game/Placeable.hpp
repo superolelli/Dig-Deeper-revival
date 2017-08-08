@@ -16,6 +16,10 @@ public:
 	void Render(sf::RenderTarget &target);
 	void SetPos(int x, int y);
 
+	const sf::IntRect &GetRect() { return sprite.GetRect(); }
+
+	bool IsSolid() { return attributes.is_solid; }
+
 private:
 
 	CSprite sprite;

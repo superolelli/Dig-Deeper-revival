@@ -47,6 +47,7 @@ void CInitialState::Update()
 	g_pFonts->LoadFonts();
 	g_pSounds->LoadSounds();
 	g_pStringContainer->LoadStrings(CStringContainer::Languages::German);
+	g_pObjectProperties->LoadObjectProperties();
 
 	m_pGameEngine->ChangeStateImmediately(new CMainMenu());
 }

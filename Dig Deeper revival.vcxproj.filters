@@ -420,6 +420,12 @@
     <ClCompile Include="src\Game\Player.cpp">
       <Filter>Quelldateien\Game</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\CollisionDetector.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\PlayerModel.cpp">
+      <Filter>Quelldateien\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Framework\Patterns\singleton.hpp">
@@ -810,6 +816,12 @@
       <Filter>Headerdateien\Framework\Animations</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\Player.hpp">
+      <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\CollisionDetector.hpp">
+      <Filter>Headerdateien\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\PlayerModel.hpp">
       <Filter>Headerdateien\Game</Filter>
     </ClInclude>
   </ItemGroup>

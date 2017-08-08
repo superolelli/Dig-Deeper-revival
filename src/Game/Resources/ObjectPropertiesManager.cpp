@@ -20,7 +20,6 @@ void ObjectPropertiesManager::LoadObjectProperties()
 	defaultAtb.hardness = pt.get("placeables.default.<xmlattr>.hardness", 0);
 
 
-
 	for(auto v : pt.get_child("placeables"))
 	{
 		PlaceableAttributes atb;

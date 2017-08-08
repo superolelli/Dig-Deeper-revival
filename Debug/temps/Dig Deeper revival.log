@@ -1,8 +1,7 @@
 ﻿  Player.cpp
-f:\dig deeper revival\src\game\player.cpp(15): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
-f:\dig deeper revival\src\game\player.cpp(16): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
-f:\dig deeper revival\src\game\player.cpp(17): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
-f:\dig deeper revival\src\game\player.cpp(18): warning C4244: "=": Konvertierung von "SpriterEngine::real" in "float", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(33): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(112): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+f:\dig deeper revival\src\game\player.cpp(120): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
   Code wird generiert...
   Überspringen... (keine relevanten Änderungen gefunden)
   main.cpp

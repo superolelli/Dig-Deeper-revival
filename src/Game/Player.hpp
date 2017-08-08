@@ -12,34 +12,40 @@
 #include "../Framework/Animations/global/settings.h"
 
 
+#include "CollisionDetector.hpp"
+#include "PlayerModel.hpp"
+
+
 class Player
 {
 public:
 
-	void Init(CGameEngine *_engine);
+	void Init(CGameEngine *_engine, CollisionDetector *_collisionDetector);
 	void Update();
 	void Render(double timeElapsed);
 	void Quit();
 
-	const sf::FloatRect &GetRect() { return playerRect; }
+	const sf::FloatRect &GetRect() { return playerModel.GetRect(); }
+	
+	const SpriterEngine::point &GetExtrapolatedPos() { return playerModel.GetExtrapolatedPos(); }
+
+	void ExtrapolationUpdate(double normalizedTimestep);
 
 private:
 	CGameEngine *gameEngine;
+	CollisionDetector *collisionDetector;
 
-	SpriterEngine::SpriterModel *model;
-	SpriterEngine::EntityInstance *body;
-	SpriterEngine::EntityInstance * arm;
-
-	sf::FloatRect playerRect;
+	PlayerModel playerModel;
 
 	int xVelocity;
 	int yVelocity;
 
+	bool isAirborne;
+	bool isJumping;
+
+	float jumpCounter;
+
 	void CheckMovement();
-
-	void ExtrapolationUpdate(double normalizedTimestep);
-
-	void LoadPlayerModel();
-
+	void CheckCollisions();
 
 };

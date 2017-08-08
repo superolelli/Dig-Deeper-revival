@@ -2,54 +2,26 @@
 
 
 
-void Player::Init(CGameEngine *_engine)
+void Player::Init(CGameEngine *_engine, CollisionDetector *_collisionDetector)
 {
 	gameEngine = _engine;
+	collisionDetector = _collisionDetector;
 
-	SpriterEngine::Settings::setErrorFunction(SpriterEngine::Settings::simpleError);
-
-	LoadPlayerModel();
-
-	SpriterEngine::UniversalObjectInterface* hitbox = body->getObjectInstance("hitbox");
-
-	playerRect.width = hitbox->getSize().x;
-	playerRect.height = hitbox->getSize().y;
-	playerRect.left = hitbox->getPosition().x;
-	playerRect.top = hitbox->getPosition().y;
+	playerModel.Init(_engine);
 
 	xVelocity = 0;
 	yVelocity = 0;
-}
 
-
-
-void Player::LoadPlayerModel()
-{
-	model = new SpriterEngine::SpriterModel("./Data/Dwarf/dwarf.scml", new SpriterEngine::ExampleFileFactory(&gameEngine->GetWindow()), new SpriterEngine::ExampleObjectFactory(&gameEngine->GetWindow()));
-	body = model->getNewEntityInstance("body");
-	arm = model->getNewEntityInstance("arm");
-
-	body->setCurrentAnimation("idle");
-
-	body->setScale(SpriterEngine::point(1, 1));
-	body->setPosition(SpriterEngine::point(400, 500));
-	body->reprocessCurrentTime();
-
-	SpriterEngine::UniversalObjectInterface* armpoint = body->getObjectInstance("armpoint");
-
-	arm->setCurrentAnimation("idle");
-
-	arm->setScale(SpriterEngine::point(1, 1));
-	arm->setPosition(SpriterEngine::point(armpoint->getPosition()));
+	jumpCounter = 0;
+	isAirborne = false;
+	isJumping = false;
 }
 
 
 
 void Player::Quit()
 {
-	SAFE_DELETE(body);
-	SAFE_DELETE(arm);
-	SAFE_DELETE(model);
+	playerModel.Quit();
 }
 
 
@@ -58,10 +30,7 @@ void Player::Update()
 {
 	CheckMovement();
 
-	playerRect.left += xVelocity;
-
-	body->setPosition(SpriterEngine::point(playerRect.left, body->getPosition().y));
-	arm->setPosition(SpriterEngine::point(playerRect.left, arm->getPosition().y));
+	playerModel.Move(xVelocity, yVelocity);
 }
 
 
@@ -73,44 +42,74 @@ void Player::CheckMovement()
 
 
 	if (gameEngine->GetMousePos().x < GetRect().left + GetRect().width/2)
-	{
-		body->setScale(SpriterEngine::point(-1, 1));
-		arm->setScale(SpriterEngine::point(-1, 1));
-	}
+		playerModel.SetDirection(Direction::left);
 	else
-	{
-		body->setScale(SpriterEngine::point(1, 1));
-		arm->setScale(SpriterEngine::point(1, 1));
-	}
+		playerModel.SetDirection(Direction::right);
+	
 
 	if (gameEngine->GetKeystates(KeyID::A) == Keystates::Held)
 		xVelocity = -2;
 
 	if (gameEngine->GetKeystates(KeyID::D) == Keystates::Held)
 		xVelocity = 2;
+
+
+
+	if (gameEngine->GetKeystates(KeyID::W) == Keystates::Pressed && isAirborne == false && isJumping == false)
+	{
+		isJumping = true;
+		isAirborne = true;
+		jumpCounter = 100;
+	}
+
+
+	if (isJumping)
+	{
+		yVelocity = -3;
+		jumpCounter -= 3;
+	}
+	else
+		yVelocity = 2;
+
+	if (jumpCounter <= 0)
+		isJumping = false;
+
+
+	CheckCollisions();
+}
+
+
+
+void Player::CheckCollisions()
+{
+	sf::FloatRect tempRect = playerModel.GetRect();
+	tempRect.top += yVelocity;
+
+	if (collisionDetector->CollisionWithWorld(tempRect))
+	{
+		yVelocity = yVelocity / 2;
+
+		tempRect.top -= yVelocity;
+		if (collisionDetector->CollisionWithWorld(tempRect))
+		{
+			yVelocity = 0;
+			isJumping = false;
+			isAirborne = false;
+		}
+	}
 }
 
 
 void Player::Render(double timeElapsed)
 {
-	ExtrapolationUpdate(timeElapsed);
-
-	if (xVelocity != 0)
-	{
-		body->setCurrentAnimation("walk");
-		arm->setCurrentAnimation("walk");
-	}
+	if (isAirborne)
+		playerModel.SetAnimation("jump");
+	else if (xVelocity != 0)
+		playerModel.SetAnimation("walk");
 	else
-	{
-		body->setCurrentAnimation("idle");
-		arm->setCurrentAnimation("idle");
-	}
+		playerModel.SetAnimation("idle");
 	
-	body->setTimeElapsed( abs(xVelocity) * 8);
-	body->render();
-
-	arm->setTimeElapsed( abs(xVelocity) * 8);
-	arm->render();
+	playerModel.Render((timeElapsed * abs(xVelocity)) / 2);
 }
 
 
@@ -118,6 +117,5 @@ void Player::Render(double timeElapsed)
 
 void Player::ExtrapolationUpdate(double normalizedTimestep)
 {
-	body->setPosition(SpriterEngine::point(playerRect.left + round(xVelocity * normalizedTimestep), body->getPosition().y));
-	arm->setPosition(SpriterEngine::point(playerRect.left + round(xVelocity * normalizedTimestep), arm->getPosition().y));
+	playerModel.ExtrapolationMove(round(xVelocity * normalizedTimestep), round(yVelocity * normalizedTimestep));
 }
