@@ -9,6 +9,15 @@ void World::Init()
 
 
 
+World::~World()
+{
+	for (auto p : placeables)
+		for (auto block : p)
+			SAFE_DELETE(block);
+}
+
+
+
 void World::GenerateWorld(int width, int height)
 {
 	SetWorldSize(width, height);
@@ -27,6 +36,10 @@ void World::GenerateWorld(int width, int height)
 				placeables[x][y] = nullptr;
 		}
 	}
+
+	placeables[7][4] = new Placeable;
+	placeables[7][4]->Init(1);
+	placeables[7][4]->SetPos(700, 400);
 }
 
 
@@ -69,4 +82,21 @@ void World::RenderPlaceables(sf::RenderTarget &_target)
 				placeables[x][y]->Render(_target);
 		}
 	}
+}
+
+
+void World::DeleteBlock(int x, int y)
+{
+	if (x >= 0 && x < worldWidth && y >= 0 && y < worldHeight)
+		SAFE_DELETE(placeables[x][y]);
+
+}
+
+
+int World::GetBlockHardness(int x, int y)
+{
+	if (x >= 0 && x < worldWidth && y >= 0 && y < worldHeight && placeables[x][y] != nullptr)
+		return placeables[x][y]->Hardness();
+	else
+		return 0;
 }

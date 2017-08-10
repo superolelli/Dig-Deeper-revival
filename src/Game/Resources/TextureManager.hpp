@@ -50,4 +50,6 @@ public:
 	sf::Texture t_backgroundSky;
 
 	std::map<int, sf::Texture> t_placeables;
+
+	sf::Texture t_breakingAnimation;
 };

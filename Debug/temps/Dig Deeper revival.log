@@ -1,14 +1,5 @@
-﻿  Player.cpp
-f:\dig deeper revival\src\game\player.cpp(33): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-f:\dig deeper revival\src\game\player.cpp(112): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-f:\dig deeper revival\src\game\player.cpp(120): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-  Code wird generiert...
-  Überspringen... (keine relevanten Änderungen gefunden)
-  main.cpp
-  NewGame.cpp
-  MainMenu.cpp
-  GameMenu.cpp
-  InitialState.cpp
-  Game.cpp
+﻿  PlayerInteraction.cpp
+f:\dig deeper revival\src\game\playerinteraction.cpp(35): warning C4244: "=": Konvertierung von "int" in "float", möglicher Datenverlust
+cl : Befehlszeile warning D9028: Fehler beim minimalen Neukompilieren, normale Erstellung wird durchgeführt.
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.exe
   Dig Deeper revival.vcxproj -> F:\Dig Deeper revival\Debug\Dig Deeper revival.pdb (Full PDB)

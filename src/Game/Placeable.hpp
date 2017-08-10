@@ -19,6 +19,7 @@ public:
 	const sf::IntRect &GetRect() { return sprite.GetRect(); }
 
 	bool IsSolid() { return attributes.is_solid; }
+	int Hardness() { return attributes.hardness; }
 
 private:
 

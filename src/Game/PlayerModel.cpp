@@ -60,7 +60,7 @@ void PlayerModel::ExtrapolationMove(float x, float y)
 
 void PlayerModel::SetPos(float x, float y)
 {
-	body->setPosition(SpriterEngine::point(x, y));
+	body->setPosition(SpriterEngine::point(x + playerRect.width/2, y));
 	body->reprocessCurrentTime();
 	arm->setPosition(armpoint->getPosition());
 }
@@ -71,6 +71,11 @@ void PlayerModel::SetAnimation(std::string animation)
 	arm->setCurrentAnimation(animation);
 }
 
+
+bool PlayerModel::AnimationFinished()
+{
+	return body->animationJustLooped();
+}
 
 
 void PlayerModel::SetDirection(Direction direction)

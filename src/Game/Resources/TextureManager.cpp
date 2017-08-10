@@ -41,6 +41,7 @@ void CTextureManager::LoadTextures()
 	t_backgroundUnderground.loadFromFile("Data/Sprites/Background_game.png");
 	t_backgroundSky.loadFromFile("Data/Sprites/Background_sky.png");
 
+	t_breakingAnimation.loadFromFile("Data/Sprites/Objects/Blocks/breaking_animation.png");
 
 	//load placeable textures
 	using boost::property_tree::ptree;

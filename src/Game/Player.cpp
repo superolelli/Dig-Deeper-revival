@@ -53,16 +53,23 @@ void Player::CheckMovement()
 	if (gameEngine->GetKeystates(KeyID::D) == Keystates::Held)
 		xVelocity = 2;
 
-
-
 	if (gameEngine->GetKeystates(KeyID::W) == Keystates::Pressed && isAirborne == false && isJumping == false)
 	{
 		isJumping = true;
 		isAirborne = true;
-		jumpCounter = 100;
+		jumpCounter = 110;
 	}
 
+	if (IsColliding())
+		xVelocity = 0;
 
+	CheckYMovement();
+}
+
+
+
+void Player::CheckYMovement()
+{
 	if (isJumping)
 	{
 		yVelocity = -3;
@@ -74,42 +81,52 @@ void Player::CheckMovement()
 	if (jumpCounter <= 0)
 		isJumping = false;
 
-
-	CheckCollisions();
-}
-
-
-
-void Player::CheckCollisions()
-{
-	sf::FloatRect tempRect = playerModel.GetRect();
-	tempRect.top += yVelocity;
-
-	if (collisionDetector->CollisionWithWorld(tempRect))
+	if (IsColliding())
 	{
 		yVelocity = yVelocity / 2;
 
-		tempRect.top -= yVelocity;
-		if (collisionDetector->CollisionWithWorld(tempRect))
+		if (IsColliding())
 		{
 			yVelocity = 0;
 			isJumping = false;
 			isAirborne = false;
 		}
 	}
+	else
+	{
+		isAirborne = true;
+	}
+}
+
+
+bool Player::IsColliding()
+{
+	sf::FloatRect tempRect = playerModel.GetRect();
+	tempRect.left += xVelocity;
+	tempRect.top += yVelocity;
+
+	return collisionDetector->CollisionWithWorld(tempRect);
 }
 
 
 void Player::Render(double timeElapsed)
 {
 	if (isAirborne)
+	{
 		playerModel.SetAnimation("jump");
+		playerModel.Render(timeElapsed);
+	}
 	else if (xVelocity != 0)
+	{
 		playerModel.SetAnimation("walk");
+		playerModel.Render((timeElapsed * abs(xVelocity)) / 2);
+	}
 	else
+	{
 		playerModel.SetAnimation("idle");
-	
-	playerModel.Render((timeElapsed * abs(xVelocity)) / 2);
+		playerModel.Render(timeElapsed);
+	}
+
 }
 
 

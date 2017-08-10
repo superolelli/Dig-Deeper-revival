@@ -28,6 +28,8 @@ public:
 
 	void Render(int speed);
 
+	bool AnimationFinished();
+
 
 
 private:

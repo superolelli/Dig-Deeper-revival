@@ -13,6 +13,8 @@ void Game::Init(CGameEngine * _engine)
 
 	player.Init(m_pGameEngine, &collisionDetector);
 
+	playerInteraction.Init(&world, m_pGameEngine);
+
 	view.reset(sf::FloatRect(0, 0, (float)_engine->GetWindowSize().x, (float)_engine->GetWindowSize().y));
 	SetViewForPlayer();
 }
@@ -59,6 +61,8 @@ void Game::Update()
 
 	player.Update();
 
+	playerInteraction.Update();
+
 	UpdateView();
 }
 
@@ -94,6 +98,8 @@ void Game::Render(double _normalizedTimestep)
 	ExtrapolationUpdate(_normalizedTimestep);
 
 	world.Render(m_pGameEngine->GetWindow(), _normalizedTimestep);
+
+	playerInteraction.Render();
 
 	player.Render(g_pTimer->GetElapsedTime().asMilliseconds());
 

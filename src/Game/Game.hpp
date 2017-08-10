@@ -5,6 +5,7 @@
 #include "World.hpp"
 #include "Player.hpp"
 #include "CollisionDetector.hpp"
+#include "PlayerInteraction.hpp"
 
 
 class Game : public GameState
@@ -26,6 +27,7 @@ private:
 	World world;
 	Player player;
 	CollisionDetector collisionDetector;
+	PlayerInteraction playerInteraction;
 	sf::View view;
 
 	void SetViewForGUI() { m_pGameEngine->GetWindow().setView(m_pGameEngine->GetWindow().getDefaultView()); }

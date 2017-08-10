@@ -46,6 +46,7 @@ private:
 	float jumpCounter;
 
 	void CheckMovement();
-	void CheckCollisions();
+	void CheckYMovement();
+	bool IsColliding();
 
 };
